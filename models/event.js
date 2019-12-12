@@ -1,8 +1,7 @@
 'use strict';
 
 const mongoose = require('mongoose');
-
-const schema = new mongoose.Schema({
+const eventSchema = new mongoose.Schema({
   title: {
     type: String,
     required: true
@@ -39,4 +38,4 @@ const schema = new mongoose.Schema({
   }
 });
 
-module.exports = mongoose.model('User', schema);
+module.exports = mongoose.model('User', eventSchema);
