@@ -3,40 +3,52 @@ const router = express.Router();
 const User = require("../models/user");
 const bcrypt = require("bcrypt");
 //const bcryptSalt = 10;
-
 router.get("/login", (req, res, next) => {
   res.render("auth/login");
 });
-
 router.post("/login", (req, res, next) => {
-  const { user, password } = req.body;
-
+  const { name, password } = req.body;
   User.findOne({
-    username
+    name
   })
     .then(user => {
       //login
       if (bcrypt.compareSync(password, user.get("password"))) {
-        res.render("auth/login");
+        res.redirect("/auth/login");
       }
-  })
-      //wrong password
+    })
+    //wrong password
     .catch(next);
 });
-
 router.get("/signup", (req, res, next) => {
   res.render("auth/signup");
 });
 
 router.post("/signup", (req, res, next) => {
-  const { username, password } = req.body;
-
-  User.create({ username, password: bcrypt.hashSync(password, 5)
+  console.log("entrei");
+  const {
+    name,
+    password,
+    email,
+    phone,
+    food_preferences,
+    cooking_Skills,
+    Quote
+  } = req.body;
+  User.create({
+    name,
+    password: bcrypt.hashSync(password, 5),
+    email,
+    phone,
+    food_preferences,
+    cooking_Skills,
+    Quote
   })
     .then(() => {
-      res.redirect("auth/login")
+      res.redirect("/auth/login");
     })
-    .catch(next);
+    .catch(err => {
+      console.log(err);
+    });
 });
-
 module.exports = router;

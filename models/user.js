@@ -1,45 +1,41 @@
-'use strict';
-const mongoose = require('mongoose');
-const Schema   = mongoose.Schema;
+"use strict";
+const mongoose = require("mongoose");
+const Schema = mongoose.Schema;
 const userSchema = new mongoose.Schema({
   name: {
     type: String,
     trim: true,
-    required: true 
+    required: true
   },
   password: {
     type: String,
-    required: true 
-      },
-  
+    required: true
+  },
+
   email: {
     type: String,
     lowercase: true,
     trim: true,
-    required: true 
+    required: true
   },
   phone: {
     type: Number,
-    required: true 
-      },
-  
-   food_preferences: {
-    type: String, 
-    trim: true,
-    required: true,
-    enum: ['burguer', 'italian', 'vegetarian', 'eggs','gluten'] 
+    required: true
   },
-  cooking_Skills:{
-    type: String,
+
+  food_preferences: {
+    type: Array,
     trim: true,
-    required: true,
-    enum: ['Professional Dish Washer', 'Jedi Chef', 'Wine Guy', 'I know how to fry an egg','Jedi Padawan'] 
-  }, 
+    required: true
+  },
+  cooking_Skills: {
+    type: Array,
+    required: true
+  },
   Quote: {
-    type: String,
-    trim: true
-  },
-    // {timestamps:true}, 
+    type: String
+  }
+  // {timestamps:true},
 });
 const User = mongoose.model("User", userSchema);
 module.exports = User;

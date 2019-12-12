@@ -1,11 +1,10 @@
-'use strict';
+"use strict";
 
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 const eventSchema = new mongoose.Schema({
   title: {
     type: String,
     required: true
-
   },
   data: {
     type: Date,
@@ -17,7 +16,7 @@ const eventSchema = new mongoose.Schema({
     type: Number,
     trim: true,
     required: true,
-    min: 1, 
+    min: 1,
     max: 10
   },
   place: {
@@ -38,4 +37,4 @@ const eventSchema = new mongoose.Schema({
   }
 });
 
-module.exports = mongoose.model('User', eventSchema);
+module.exports = mongoose.model("Event", eventSchema);
