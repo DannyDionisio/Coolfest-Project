@@ -38,5 +38,16 @@ router.post("/create-event", (req, res, next) => {
 
 // -- delete event
 
+router.post('/events/edit', (req, res, next) => {
+  const { title, date, capacity, place, contacts, recipe, comment  } = req.body;
+  Event.update({_id: req.query.events_id}, { $set: {title, date, capacity, place, contacts, recipe, comment }})
+  .then((event) => {
+    res.redirect('/events');
+  })
+  .catch((error) => {
+    console.log(error);
+  })
+});
+
 
 module.exports = router;
