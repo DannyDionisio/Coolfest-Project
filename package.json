@@ -25,5 +25,17 @@
   "devDependencies": {
     "mocha": "^6.2.0",
     "nodemon": "^1.19.2"
-  }
+  },
+  "main": "app.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DannyDionisio/Coolfest-Project.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DannyDionisio/Coolfest-Project/issues"
+  },
+  "homepage": "https://github.com/DannyDionisio/Coolfest-Project#readme",
+  "description": ""
 }
