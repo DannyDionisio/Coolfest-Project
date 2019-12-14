@@ -53,4 +53,32 @@ router.post("/signup", (req, res, next) => {
       console.log(err);
     });
 });
+
+const Event = require("../models/event");
+
+
+router.get("/create-event", (req, res, next) => {
+  console.log("testando GET");
+  res.render("create-event");
+});
+
+router.post("/create-event", (req, res, next) => {
+  const {
+    title, date, capacity, place, contacts, recipe, comment
+  } = req.body;
+  console.log("testando POST");
+
+  Event.create({
+    title, date, capacity, place, contacts, recipe, comment
+  })
+  
+    .then(() => {
+      console.log("testando POST redirecionando");
+      res.redirect("/");
+    })
+    .catch(next);
+});
+
+
+
 module.exports = router;

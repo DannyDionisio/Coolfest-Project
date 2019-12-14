@@ -6,7 +6,7 @@ const eventSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  data: {
+  date: {
     type: Date,
     trim: true,
     default: Date.now,
@@ -37,4 +37,6 @@ const eventSchema = new mongoose.Schema({
   }
 });
 
-module.exports = mongoose.model("Event", eventSchema);
+
+const Event = mongoose.model("Event", eventSchema);
+module.exports = Event;
