@@ -8,18 +8,20 @@ router.get("/login", (req, res, next) => {
 });
 router.post("/login", (req, res, next) => {
   const { name, password } = req.body;
+  console.log(name);
   User.findOne({
     name
   })
     .then(user => {
       //login
       if (bcrypt.compareSync(password, user.get("password"))) {
-        res.redirect("/auth/login");
+        res.redirect("/");
       }
     })
     //wrong password
     .catch(next);
 });
+
 router.get("/signup", (req, res, next) => {
   res.render("auth/signup");
 });

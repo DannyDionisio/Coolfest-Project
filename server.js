@@ -2,7 +2,7 @@
 
 require('dotenv').config();
 
-const debug = require('debug')('coolfest:server');
+const debug = require('debug')('comeal:server');
 const app = require('./app');
 const mongoose = require('mongoose');
 

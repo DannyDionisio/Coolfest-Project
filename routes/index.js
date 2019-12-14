@@ -5,7 +5,7 @@ const router = new Router();
 const axios = require('axios');
 
 router.get("/", (req, res, next) => {
-  res.render("index", { title: "Coolfest" });
+  res.render("index", { title: "Comeal" });
 });
 
 module.exports = router;
@@ -16,6 +16,6 @@ module.exports = router;
 //  )
 //    .then(response => response.json())
 //    .then(response => {
-//      res.render("index", { title: "Coolfest", recipies: response.results });
+//      res.render("index", { title: "Comeal", recipies: response.results });
 //    });
 //});
