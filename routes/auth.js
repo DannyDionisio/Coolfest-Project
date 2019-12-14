@@ -8,7 +8,6 @@ router.get("/login", (req, res, next) => {
 });
 router.post("/login", (req, res, next) => {
   const { name, password } = req.body;
-  console.log(name);
   User.findOne({
     name
   })
@@ -27,7 +26,6 @@ router.get("/signup", (req, res, next) => {
 });
 
 router.post("/signup", (req, res, next) => {
-  console.log("entrei");
   const {
     name,
     password,
@@ -54,31 +52,16 @@ router.post("/signup", (req, res, next) => {
     });
 });
 
-const Event = require("../models/event");
 
-
-router.get("/create-event", (req, res, next) => {
-  console.log("testando GET");
-  res.render("create-event");
+router.get('/', (req, res, next) => {
+  res.render('user', { name: 'James Dean' });
 });
-
-router.post("/create-event", (req, res, next) => {
-  const {
-    title, date, capacity, place, contacts, recipe, comment
-  } = req.body;
-  console.log("testando POST");
-
-  Event.create({
-    title, date, capacity, place, contacts, recipe, comment
-  })
-  
-    .then(() => {
-      console.log("testando POST redirecionando");
-      res.redirect("/");
-    })
-    .catch(next);
-});
-
-
 
 module.exports = router;
+
+// -- edit events -- 
+//GET EDIT PROFILE VIEW
+//POST(?) EDIT Profile VIEW FORM
+
+
+

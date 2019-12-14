@@ -9,12 +9,12 @@ const sassMiddleware = require("node-sass-middleware");
 const serveFavicon = require("serve-favicon");
 
 const indexRouter = require("./routes/index");
-const usersRouter = require("./routes/user");
-const eventRouter = require("./routes/event");
+// const usersRouter = require("./routes/user");
+const eventRouter = require("./routes/events");
 const authRouter = require("./routes/auth");
-const searchRouter = require("./routes/search");
-const eventDetailRouter = require("./routes/event-detail");
-const createEventRouter = require("./routes/create-event");
+
+//const eventDetailRouter = require("./routes/event-detail");
+//const createEventRouter = require("./routes/create-event");
 
 const app = express();
 
@@ -38,11 +38,11 @@ app.use(express.static(join(__dirname, "public")));
 
 app.use("/", indexRouter);
 app.use("/auth", authRouter);
-app.use("/user", usersRouter);
-app.use("/event", eventRouter);
-app.use("/search", searchRouter);
-app.use("/event-detail", eventDetailRouter);
-app.use("/create-event", createEventRouter);
+// app.use("/user", usersRouter);
+app.use("/events", eventRouter);
+
+//app.use("/event-detail", eventDetailRouter);
+//app.use("/create-event", createEventRouter);
 
 
 // Catch missing routes and forward to error handler
