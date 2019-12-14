@@ -5,18 +5,23 @@ const Event = require("../models/event");
 // const bcrypt = require("bcrypt");
 // const bcryptSalt = 10;
 
-router.get("/create-event", (req, res, next) => {
-  res.render("create-event");
-});
+//router.get("/create-event", (req, res, next) => {
+//  res.render("create-event");
+//});
 
 router.post("/create-event", (req, res, next) => {
-  const {
-    type, Date,capacity, place, contacts, recipe, comment
-  } = req.body;
+  const { title, date, capacity, place, contacts, recipe, comment } = req.body;
   Event.create({
-    type, Date,capacity, place, contacts, recipe, comment
+    title,
+    date,
+    capacity,
+    place,
+    contacts,
+    recipe,
+    comment
   })
-    .then(() => {
+    .then(event => {
+      
       res.redirect("/user");
     })
     .catch(next);
