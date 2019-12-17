@@ -1,13 +1,27 @@
-<h1>EVENT LIST</h1>
-  <h1>Choose an Co Meal that you want to go!</h1> 
-  <p> 
-         {{events}}
-               {{#each events}}
-          {{!-- {{this.title}} --}}
-          {{!-- {{this.date}}
-          {{this.capacity}} --}}
+<h2> EVENT LIST </h2>
+
+<h1>{{title}}</h1>
+<ul>
+  {{#each events}}
+  <li>
+    <a href="/events/{{ this._id }}">
+     <p> {{ this.title }} </p>, 
+     <p> {{ this.date }}, </p>
+    <p>  {{ this.capacity }}, </p>
+     <p> {{ this.place }}, </p>
+   <p>   {{ this.recipe }},</p>
+  <p>  {{ this.coments }},  </p>  
+    </a>
+    {{!-- - {{ this.capacity }} --}}
+    <a href="/events/{{ this._id }}/edit">
+      Edit
+    </a>
+    <form action="/events/{{ this._id }}/delete" method="POST">
+      <button> Delete </button>
+    </form>
+  </li>
+  {{/each}}
+</ul>
+</a>
 
 
-          {{/each}}  
-
-          </p>
