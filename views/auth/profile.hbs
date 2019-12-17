@@ -1,0 +1,45 @@
+<h1>User Profile</h1>
+<p>{{name}}</p>
+
+UPDATE/EDIT YOUR PROFILE 
+
+<form action="/auth/signup" method="POST" id="form">
+  
+  <p> Hi my name is: {{name}} </p>
+
+  
+  {{name}} <label for="">Password:</label>
+  <input type="password" name="password">
+  
+  <label for="">Email:</label>
+  <input type="email" name="email">
+  
+  <label for="">Phone:</label>
+  <input type="number" name="phone">
+  
+  <label for="">Food Preferences:</label>
+  <input type="checkbox" name="food_preferences" value="burguer">Burguer<br>
+  <input type="checkbox" name="food_preferences" value="italian">Italian<br>  
+  <input type="checkbox" name="food_preferences" value="vegetarian">Vegetarian<br>
+  <input type="checkbox" name="food_preferences" value="eggs">Eggs<br>
+  <input type="checkbox" name="food_preferences" value="gluten">Gluten<br>
+
+  <label for="">Cooking Skills:</label>
+  <input type="checkbox" name="cooking_Skills" value="Professional Dish Washer"> Professional Dish Washer <br>
+  <input type="checkbox" name="cooking_Skills" value="Jedi Chef"> Jedi Chef <br>
+  <input type="checkbox" name="cooking_Skills" value="Wine Guy"> Wine Guy <br>
+  <input type="checkbox" name="cooking_Skills" value="I know how to fry an egg"> I know how to fry an egg <br>
+  <input type="checkbox" name="cooking_Skills" value="Padawan Chef">Padawan Chef<br>
+
+  <label for="">Resume yourself in one quote:</label>
+  <input type="text" name="Quote">
+  <button type="submit">ADD</button>
+</form>
+
+
+
+
+
+
+
+<a href="events/create-event">Become a host</a>

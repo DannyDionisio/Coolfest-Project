@@ -24,14 +24,39 @@ router.get('/events', (req, res, next) => {
   });
 });
 
-module.exports = router;
+router.post('/events/:id/delete', (req, res, next) => {
+  Event.findById(req.params.id)
+  .then(event => {
+    event.remove()
+      .then(() => {
+        res.redirect('/events');
+      })
+      .catch(error => {
+        next(error);
+      });
+  });
+});
 
-//router.get("/", (req, res, next) => {
-//  fetch(
-//    "https://api.spoonacular.com/recipes/search?apiKey=4bbde67ea47345b69767d4d3093f0fe5&number=5"
-//  )
-//    .then(response => response.json())
-//    .then(response => {
-//      res.render("index", { title: "Comeal", recipies: response.results });
-//    });
-//});
+// router.post('/events/:id', (req, res, next) => {
+//   const updatedEvent = {
+//         title: req.body.title,
+//         date: req.body.date, 
+//         capacity: req.body.capacity, 
+//         place: req.body.place,
+//         contacts: req.body.contacts, 
+//         recipe: req.body.recipe, 
+//         comment: req.body.comment,
+//   };
+
+//   Event.update({_id: req.params.id}, updatedEvent)
+//     .then(() => {
+//       res.redirect('/events');
+//     })
+//     .catch((error) => {
+//       next(error);
+//     });
+// });
+
+
+
+module.exports = router;

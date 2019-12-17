@@ -1,29 +1,19 @@
-<<<<<<< HEAD
 <h2> EVENT LIST </h2>
-=======
-<h1>EVENT LIST</h1>
-  <h1>Choose an Co Meal that you want to go!</h1> 
-  {{#each ingredients}}
-  {{ this.name }}
-  {{/each}}
-        {{!-- {{events}}
-               {{#each events}}
-          {{!-- {{this.title}} --}}
-          {{!-- {{this.date}}
-          {{this.capacity}} --}}
->>>>>>> 7fd4632f6911af981a306ae8ea93df60f26d1b4a
+
+<h1> Choose your Co Meal that you want to go </h1>
 
 <h1>{{title}}</h1>
 <ul>
   {{#each events}}
   <li>
+    <h5>
     <a href="/events/{{ this._id }}">
      <p> {{ this.title }} </p>, 
-     <p> {{ this.date }}, </p>
-    <p>  {{ this.capacity }}, </p>
-     <p> {{ this.place }}, </p>
-   <p>   {{ this.recipe }},</p>
-  <p>  {{ this.coments }},  </p>  
+    When: {{ this.date }} <br />,
+   CO MEAL attendees: {{ this.capacity }}  <br />,
+      Where: {{ this.place }} <br />,
+   Recipe:   {{ this.recipe }} <br />,
+  Description: {{ this.comment }},  
     </a>
     {{!-- - {{ this.capacity }} --}}
     <a href="/events/{{ this._id }}/edit">
@@ -32,13 +22,8 @@
     <form action="/events/{{ this._id }}/delete" method="POST">
       <button> Delete </button>
     </form>
+    </h5>
   </li>
   {{/each}}
 </ul>
 </a>
-
-<<<<<<< HEAD
-
-=======
-        {{!--  {{/each}}  
->>>>>>> 7fd4632f6911af981a306ae8ea93df60f26d1b4a
