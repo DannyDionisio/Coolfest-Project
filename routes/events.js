@@ -4,10 +4,7 @@ const express = require("express");
 const router = express.Router();
 const Event = require("../models/event");
 
-//--- the list of the events ---
-router.get('/', (req, res, next) => {
-  res.render('events');
- });
+
 //------CRIAR VIEWWW
 
  //--- create events --- 
@@ -26,7 +23,7 @@ router.post("/create-event", (req, res, next) => {
     comment
   })
     .then(event => {  
-      res.redirect("/");
+      res.redirect("/events");
     })
     .catch(next);
 });
