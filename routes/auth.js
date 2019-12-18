@@ -56,11 +56,52 @@ router.post("/signup", (req, res, next) => {
 });
 
 
-router.get('/', (req, res, next) => {
-  res.render('user', { name: 'James Dean' });
+router.get("/profile", (req, res, next) => {
+  res.render("auth/profile");
 });
 
+//     {/*something here*/} /// then(users) //   // .then( user => {
+
+//   })
+// });
+
+
+router.post('/user/:id', (req, res, next) => {
+  const updatedUser = {
+        name: req.body.name,
+              email: req.body.email, 
+        place: req.body.place,
+        phone: req.body.phone, 
+        Quote: req.body.Quote, 
+        cooking_Skills: req.body.cooking_Skills,
+        food_preferences: req.body.food_preferences
+  };
+
+  User.update({_id: req.params.id}, updatedUser)
+    .then(() => {
+      res.redirect('/auth/profile');
+    })
+    .catch((error) => {
+      next(error);
+    });
+});
+
+
+
+
+
+
+
+
+
+
+
+
 module.exports = router;
+
+
+
+
 
 // -- edit events -- 
 //GET EDIT PROFILE VIEW
