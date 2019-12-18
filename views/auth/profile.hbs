@@ -1,22 +1,25 @@
+<div class = "logo">
+  <img src="/images/logo.png" width=11% alt="logo">
+</div>
+<div class = "profile">
 <h1>User Profile</h1>
-<p>{{name}}</p>
-
+{{#each users}}
+<p>{{ this.name }}</p>
+{{/each}}
 UPDATE/EDIT YOUR PROFILE 
 
-<form action="/auth/signup" method="POST" id="form">
+<form action="/auth/profile" method="POST" id="form">
   
   <p> Hi my name is: {{name}}  </p>
-
+  <label for="name">   Do you want change your name </label>
+  <input type="text" name="name">
   
-  {{name}} <label for="">Password:</label>
-  <input type="password" name="password">
-  
-  <label for="">Email:</label>
-  <input type="email" name="email">
-  
+  <p> Phone number: {{phone}}  </p>
   <label for="">Phone:</label>
   <input type="number" name="phone">
   
+<p> My Food preferences: {{food_preferences}}  </p>
+
   <label for="">Food Preferences:</label>
   <input type="checkbox" name="food_preferences" value="burguer">Burguer<br>
   <input type="checkbox" name="food_preferences" value="italian">Italian<br>  
@@ -24,6 +27,7 @@ UPDATE/EDIT YOUR PROFILE
   <input type="checkbox" name="food_preferences" value="eggs">Eggs<br>
   <input type="checkbox" name="food_preferences" value="gluten">Gluten<br>
 
+<p> My Cooking Skills: {{cooking_Skills}}  </p>
   <label for="">Cooking Skills:</label>
   <input type="checkbox" name="cooking_Skills" value="Professional Dish Washer"> Professional Dish Washer <br>
   <input type="checkbox" name="cooking_Skills" value="Jedi Chef"> Jedi Chef <br>
@@ -31,15 +35,13 @@ UPDATE/EDIT YOUR PROFILE
   <input type="checkbox" name="cooking_Skills" value="I know how to fry an egg"> I know how to fry an egg <br>
   <input type="checkbox" name="cooking_Skills" value="Padawan Chef">Padawan Chef<br>
 
+<p> Change my Quote: {{Quote}}  </p>
+  
   <label for="">Resume yourself in one quote:</label>
   <input type="text" name="Quote">
   <button type="submit">ADD</button>
 </form>
 
-
-
-
-
-
+</div>
 
 <a href="events/create-event">Become a host</a>
