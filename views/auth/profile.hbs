@@ -2,16 +2,9 @@
   <img src="/images/logo.png" width=11% alt="logo">
 </div>
 <div class = "profile">
-<h1>User Profile</h1>
-{{#each users}}
-<p>{{ this.name }}</p>
-{{/each}}
+
+<h2>Welcome again {{user.name}}</h2>
 </div>
-
-<a href="events/create-event">Become a host</a>
-
-
-{{!--Upload profile photo --}}
 
 <section>
   <h2>Upload your photo</h2>
@@ -24,8 +17,8 @@
 
 <section>
   {{#each pictures}}
-    <h3>{{ this.name }}</h3>
-    <img src="{{ this.path }}" alt="{{ this.originalName }}" />
+    <h3>{{ user.name }}</h3>
+    <img src="{{ user.path }}" alt="{{ user.originalName }}" />
   {{/each}}
 </section>
 
@@ -33,15 +26,15 @@ UPDATE/EDIT YOUR PROFILE
 
 <form action="/auth/profile" method="POST" id="form">
   
-  <p> Hi my name is: {{name}}  </p>
+  <p> Hi my name is: {{user.name}}  </p>
   <label for="name">   Do you want change your name </label>
   <input type="text" name="name">
   
-  <p> Phone number: {{phone}}  </p>
+  <p> Phone number: {{user.phone}}  </p>
   <label for="">Phone:</label>
   <input type="number" name="phone">
   
-  <p> My Food preferences: {{food_preferences}}  </p>
+  <p> My Food preferences: {{user.food_preferences}}  </p>
 
   <label for="">Food Preferences:</label>
   <input type="checkbox" name="food_preferences" value="burguer">Burguer<br>
@@ -50,7 +43,7 @@ UPDATE/EDIT YOUR PROFILE
   <input type="checkbox" name="food_preferences" value="eggs">Eggs<br>
   <input type="checkbox" name="food_preferences" value="gluten">Gluten<br>
 
-  <p> My Cooking Skills: {{cooking_Skills}}  </p>
+  <p> My Cooking Skills: {{user.cooking_Skills}}  </p>
   <label for="">Cooking Skills:</label>
   <input type="checkbox" name="cooking_Skills" value="Professional Dish Washer"> Professional Dish Washer <br>
   <input type="checkbox" name="cooking_Skills" value="Jedi Chef"> Jedi Chef <br>
@@ -58,10 +51,11 @@ UPDATE/EDIT YOUR PROFILE
   <input type="checkbox" name="cooking_Skills" value="I know how to fry an egg"> I know how to fry an egg <br>
   <input type="checkbox" name="cooking_Skills" value="Padawan Chef">Padawan Chef<br>
 
-  <p> Change my Quote: {{Quote}}  </p>
+  <p> Change my Quote: {{user.Quote}}  </p>
   
   <label for="">Resume yourself in one quote:</label>
   <input type="text" name="Quote">
   <button type="submit">ADD</button>
 </form>
 
+<a href="events/create-event">Become a host</a>

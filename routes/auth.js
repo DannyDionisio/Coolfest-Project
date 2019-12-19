@@ -11,18 +11,37 @@ router.get("/login", (req, res, next) => {
   res.render("auth/login");
 });
 router.post("/login", (req, res, next) => {
-  const { name, password } = req.body;
-  User.findOne({
-    name
-  })
-    .then(user => {
-      //login
-      if (bcrypt.compareSync(password, user.get("password"))) {
-        res.redirect("/auth/profile");
+  const theUsername = req.body.username;
+  const thePassword = req.body.password;
+
+  if (theUsername === "" || thePassword === "") {
+    res.render("auth/login", {
+      errorMessage: "Please enter both, username and password to sign up."
+    });
+    return;
+  }
+
+  User.findOne({ "username": theUsername })
+  .then(user => {
+      if (!user) {
+        res.render("auth/login", {
+          errorMessage: "The username doesn't exist."
+        });
+        return;
       }
-    })
-    //wrong password
-    .catch(next);
+      if (bcrypt.compareSync(thePassword, user.password)) {
+        // Save the login in the session!
+        req.session.currentUser = user;
+        res.redirect("/auth/profile");
+      } else {
+        res.render("auth/login", {
+          errorMessage: "Incorrect password"
+        });
+      }
+  })
+  .catch(error => {
+    next(error);
+  })
 });
 
 /// ------- Sign UP ------
@@ -58,8 +77,22 @@ router.post("/signup", (req, res, next) => {
 });
 
 
-router.get("/profile", (req, res, next) => {
-  res.render("auth/profile");
+// router.get("/profile", (req, res, next) => {
+//   res.render("auth/profile");
+// });
+
+
+router.get('/profile', (req, res, next) => {
+  console.log("user", req.session.currentUser);
+
+  User.findById(req.params.id)
+  .then(o => {
+    console.log(o);
+    res.render('auth/profile', { user: req.session.currentUser });
+  })
+  .catch(error => {
+    next(error);
+  });
 });
 
 //     {/*something here*/} /// then(users) //   // .then( user => {
@@ -68,7 +101,7 @@ router.get("/profile", (req, res, next) => {
 // });
 
 
-router.post('/user/:id', (req, res, next) => {
+router.put('/profile/:id', (req, res, next) => {
   const updatedUser = {
         name: req.body.name,
               email: req.body.email, 
@@ -90,11 +123,11 @@ router.post('/user/:id', (req, res, next) => {
 
 // Route to upload from the profile picture
 
-router.get('/auth/profile', function(req, res, next) {
-  Picture.find((err, pictures) => {
-    res.render('profile', {pictures})
-  })
-});
+// router.get('/auth/profile', function(req, res, next) {
+//   Picture.find((err, pictures) => {
+//     res.render('profile', {pictures})
+//   })
+// });
 
 
 const upload = multer({ dest: './public/uploads/' });
