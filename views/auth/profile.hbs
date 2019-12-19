@@ -1,9 +1,3 @@
-<form action="/create" method="POST" enctype="multipart/form-data">
-  <input type="file" name="file-uploaded">
-  <input type="name" name="title">
-  <button>Submit Form</button>
-</form>
-
 <div class = "logo">
   <img src="/images/logo.png" width=11% alt="logo">
 </div>
@@ -12,6 +6,28 @@
 {{#each users}}
 <p>{{ this.name }}</p>
 {{/each}}
+</div>
+
+<a href="events/create-event">Become a host</a>
+
+
+{{!--Upload profile photo --}}
+<section>
+  <h2>Upload your photo</h2>
+  <form action="/upload" method="post" enctype="multipart/form-data">
+    <input type="text" name="name">
+    <input type="file" name="photo">
+    <input type="submit" value="Save">
+  </form>
+</section>
+
+<section>
+  {{#each pictures}}
+    <h3>{{ this.name }}</h3>
+    <img src="{{ this.path }}" alt="{{ this.originalName }}" />
+  {{/each}}
+</section>
+
 UPDATE/EDIT YOUR PROFILE 
 
 <form action="/auth/profile" method="POST" id="form">
@@ -50,4 +66,3 @@ UPDATE/EDIT YOUR PROFILE
 
 </div>
 
-<a href="events/create-event">Become a host</a>

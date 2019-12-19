@@ -2,6 +2,8 @@ const express = require("express");
 const router = express.Router();
 const User = require("../models/user");
 const bcrypt = require("bcrypt");
+const multer  = require('multer');
+const Picture = require('../models/picture');
 //const bcryptSalt = 10;
 
 // ------login-----
@@ -16,7 +18,7 @@ router.post("/login", (req, res, next) => {
     .then(user => {
       //login
       if (bcrypt.compareSync(password, user.get("password"))) {
-        res.redirect("/");
+        res.redirect("/auth/profile");
       }
     })
     //wrong password
@@ -86,7 +88,29 @@ router.post('/user/:id', (req, res, next) => {
     });
 });
 
+// Route to upload from the profile picture
 
+router.get('/auth/profile', function(req, res, next) {
+  Picture.find((err, pictures) => {
+    res.render('profile', {pictures})
+  })
+});
+
+
+const upload = multer({ dest: './public/uploads/' });
+
+router.post('/upload', upload.single('photo'), (req, res) => {
+
+  const pic = new Picture({
+    name: req.body.name,
+    path: `/uploads/${req.file.filename}`,
+    originalName: req.file.originalname
+  });
+
+  pic.save((err) => {
+      res.redirect('/auth/profile');
+  });
+});
 
 
 
