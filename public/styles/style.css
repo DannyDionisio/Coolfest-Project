@@ -56,19 +56,50 @@ a {
   padding-top: 10px; }
 
 /*LOGIN & SIGNUP*/
-#form {
-  padding: 25%; }
+.bg-log-signup {
+  background-image: url(../images/kitchen.jpg);
+  background-repeat: no-repeat;
+  height: 100vh;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  padding: 50px; }
 
-.aln-form {
-  position: relative; }
+.bg-log-signup h2 {
+  padding: 20px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 45px;
+  color: #113c2b; }
+
+.container-log-sign {
+  background-color: white;
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  border-radius: 5px; }
+
+.box-login {
+  width: -webkit-fill-available;
+  padding: 25px; }
 
 .style-form {
-  padding: 20px; }
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  font-weight: bold; }
 
 .style-btn {
-  padding: 10px; }
+  padding: 10px;
+  width: -webkit-fill-available;
+  color: white;
+  background-color: #009a3d;
+  font-weight: bold; }
 
 input:required + .help-text::before {
-  content: '*Required'; }
+  content: '*Required';
+  font-weight: normal;
+  font-size: small; }
 
 /*# sourceMappingURL=style.css.map */

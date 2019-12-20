@@ -2,8 +2,8 @@ const express = require("express");
 const router = express.Router();
 const User = require("../models/user");
 const bcrypt = require("bcrypt");
-const multer  = require('multer');
-const Picture = require('../models/picture');
+const multer = require("multer");
+const Picture = require("../models/picture");
 //const bcryptSalt = 10;
 
 // ------login-----
@@ -21,8 +21,8 @@ router.post("/login", (req, res, next) => {
     return;
   }
 
-  User.findOne({ "username": theUsername })
-  .then(user => {
+  User.findOne({ name: theUsername })
+    .then(user => {
       if (!user) {
         res.render("auth/login", {
           errorMessage: "The username doesn't exist."
@@ -38,10 +38,10 @@ router.post("/login", (req, res, next) => {
           errorMessage: "Incorrect password"
         });
       }
-  })
-  .catch(error => {
-    next(error);
-  })
+    })
+    .catch(error => {
+      next(error);
+    });
 });
 
 /// ------- Sign UP ------
@@ -76,23 +76,21 @@ router.post("/signup", (req, res, next) => {
     });
 });
 
-
 // router.get("/profile", (req, res, next) => {
 //   res.render("auth/profile");
 // });
 
-
-router.get('/profile', (req, res, next) => {
+router.get("/profile", (req, res, next) => {
   console.log("user", req.session.currentUser);
 
   User.findById(req.params.id)
-  .then(o => {
-    console.log(o);
-    res.render('auth/profile', { user: req.session.currentUser });
-  })
-  .catch(error => {
-    next(error);
-  });
+    .then(o => {
+      console.log(o);
+      res.render("auth/profile", { user: req.session.currentUser });
+    })
+    .catch(error => {
+      next(error);
+    });
 });
 
 //     {/*something here*/} /// then(users) //   // .then( user => {
@@ -100,23 +98,22 @@ router.get('/profile', (req, res, next) => {
 //   })
 // });
 
-
-router.put('/profile/:id', (req, res, next) => {
+router.put("/profile/:id", (req, res, next) => {
   const updatedUser = {
-        name: req.body.name,
-              email: req.body.email, 
-        place: req.body.place,
-        phone: req.body.phone, 
-        Quote: req.body.Quote, 
-        cooking_Skills: req.body.cooking_Skills,
-        food_preferences: req.body.food_preferences
+    name: req.body.name,
+    email: req.body.email,
+    place: req.body.place,
+    phone: req.body.phone,
+    Quote: req.body.Quote,
+    cooking_Skills: req.body.cooking_Skills,
+    food_preferences: req.body.food_preferences
   };
 
-  User.update({_id: req.params.id}, updatedUser)
+  User.update({ _id: req.params.id }, updatedUser)
     .then(() => {
-      res.redirect('/auth/profile');
+      res.redirect("/auth/profile");
     })
-    .catch((error) => {
+    .catch(error => {
       next(error);
     });
 });
@@ -129,42 +126,23 @@ router.put('/profile/:id', (req, res, next) => {
 //   })
 // });
 
+const upload = multer({ dest: "./public/uploads/" });
 
-const upload = multer({ dest: './public/uploads/' });
-
-router.post('/upload', upload.single('photo'), (req, res) => {
-
+router.post("/upload", upload.single("photo"), (req, res) => {
   const pic = new Picture({
     name: req.body.name,
     path: `/uploads/${req.file.filename}`,
     originalName: req.file.originalname
   });
 
-  pic.save((err) => {
-      res.redirect('/auth/profile');
+  pic.save(err => {
+    res.redirect("/auth/profile");
   });
 });
 
-
-
-
-
-
-
-
-
-
 module.exports = router;
 
-
-
-
-
-// -- edit events -- 
+// -- edit events --
 //GET EDIT PROFILE VIEW
 
-
 //POST(?) EDIT Profile VIEW FORM
-
-
-

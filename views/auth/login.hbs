@@ -5,36 +5,33 @@
     </a>
     <ul class="nav">
       <li class="nav-item">
-        <a class="nav-link active" href="/auth/login">Login</a>
-      </li>
-      <li class="nav-item">
         <a class="nav-link" href="/auth/signup">Sign Up</a>
       </li>
     </ul>
   </nav>
 </header>
-
-
-<div class="container bg-form">
-  <form action="/auth/login" method="POST" id="form">
-    <h2>Login</h2>
-  <div class="aln-form">
-    <div class="style-form">
-      <label for="required-name">Name:</label>
-      <input type="text" name="name" id="required-name" required>
-      <span class="help-text"></span>
-    </div>
-    <div class="style-form">
-      <label for="required-pw">Password:</label>
-      <input type="password" name="password" id="required-pw" required>
-      <span class="help-text"></span>
-    </div>
-    <button class="style-btn" type="submit">LOGIN</button>
-  </div>
-  </form>
-  <div>
-    <p>Don't have an account? <a href="signup">Sign Up</a></p>
+<div class="bg-log-signup">
+  <h2>LOGIN</h2>
+  <div class="container-log-sign">
+    <form action="/auth/login" method="POST" id="form" class="box-login">
+      <div class="aln-form">
+        <div class="style-form">
+          <label for="required-name">Username:</label>
+          <input type="text" name="username" id="required-name" required>
+          <span class="help-text"></span>
+        </div>
+        <div class="style-form">
+          <label for="required-pw">Password:</label>
+          <input type="password" name="password" id="required-pw" required>
+          <span class="help-text"></span>
+        </div>
+        <button class="style-btn" type="submit">Login</button>
+        <h1>{{errorMessage}}</h1>
+      </div>
+      <div>
+        <p>Don't have an account? <a href="signup">Sign Up</a></p>
+      </div>
+    </form>
+    
   </div>
 </div>
-
-<a href="/auth/profile"> Update your profile</a>
