@@ -5,7 +5,7 @@
     </a>
     <ul class="nav">
       <li class="nav-item">
-<h2> WELCOME BACK!</h2> <h1> {{user.name}}</h1>
+        <h2> WELCOME BACK!</h2> <h1> {{user.name}}</h1>
       </li>
     </ul>
   </nav>
@@ -27,12 +27,13 @@
   </form>
   </section>
 
-<section>
-  {{#each pictures}}
-    <h3>{{ user.name }}</h3>
-    <img src="{{ user.path }}" alt="{{ user.originalName }}" />
+<div class="user-pic">
+  {{#each user}}
+    <div class="user-item">
+      <img src="{{user.imgPath}}" alt="">
+    </div>
   {{/each}}
-</section>
+</div>
 
 <form action="/auth/profile" method="POST" id="form" class="box-login" class="box-login">
     <div class="aln-form">

@@ -3,6 +3,7 @@ const router = express.Router();
 const User = require("../models/user");
 const bcrypt = require("bcrypt");
 const multer = require("multer");
+const uploadCloud = require('../config/cloudinary.js');
 //const bcryptSalt = 10;
 
 // ------login-----
@@ -145,3 +146,18 @@ module.exports = router;
 //GET EDIT PROFILE VIEW
 
 //POST(?) EDIT Profile VIEW FORM
+
+
+
+router.post('/auth/profile', uploadCloud.single('photo'), (req, res, next) => {
+  const imgPath = req.file.url;
+  const imgName = req.file.originalname;
+  const newMovie = new Movie({imgPath, imgName})
+  newMovie.save()
+  .then(movie => {
+    res.redirect('/auth/profile');
+  })
+  .catch(error => {
+    console.log(error);
+  });
+});
