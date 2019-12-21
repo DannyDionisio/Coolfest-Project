@@ -102,4 +102,9 @@ input:required + .help-text::before {
   font-weight: normal;
   font-size: small; }
 
+#required-name, #required-pw, .style-btn {
+  border-radius: 4px;
+  height: 38px;
+  border: 1px solid #cccccc; }
+
 /*# sourceMappingURL=style.css.map */

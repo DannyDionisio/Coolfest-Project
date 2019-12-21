@@ -116,10 +116,17 @@ a {
   color: white;
   background-color: #009a3d;
   font-weight: bold;
+  margin: 0 18px;
 }
 
 input:required + .help-text::before {
   content: '*Required';
   font-weight: normal;
   font-size: small;
+}
+
+#required-name, #required-pw, .style-btn {
+  border-radius: 4px;
+  height: 38px;
+  border: 1px solid #cccccc;
 }
