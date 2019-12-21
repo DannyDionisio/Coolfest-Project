@@ -1,19 +1,31 @@
-<div class = "logo">
-  <img src="/images/logo.png" width=11% alt="logo">
-</div>
-<div class = "profile">
+<header>
+  <nav class="navbar navbar-light bg-light">
+    <a class="navbar-brand" href="#">
+      <img src="/images/logo.png" width="100" height="120" alt="logo">
+    </a>
+    <ul class="nav">
+      <li class="nav-item">
+<h2> WELCOME BACK!</h2> <h1> {{user.name}}</h1>
+      </li>
+    </ul>
+  </nav>
+</header>
+</br>
 
-<h2>Welcome again {{user.name}}</h2>
-</div>
-
+<div class="bg-log-signup">
+  <div class="container-log-sign event">
 <section>
-  <h2>Upload your photo</h2>
-  <form action="/upload" method="post" enctype="multipart/form-data">
+   <div class="aln-form">
+   <div class="style-form">
+              <h3>UPDATE/EDIT YOUR PROFILE </h3>
+
+  Upload your photo
+  <form action="/upload" method="post" enctype="multipart/form-data" class="box-login">
     <input type="text" name="name">
     <input type="file" name="photo">
     <input type="submit" value="Save">
   </form>
-</section>
+  </section>
 
 <section>
   {{#each pictures}}
@@ -22,10 +34,9 @@
   {{/each}}
 </section>
 
-UPDATE/EDIT YOUR PROFILE 
-
-<form action="/auth/profile" method="POST" id="form">
-  
+<form action="/auth/profile" method="POST" id="form" class="box-login" class="box-login">
+    <div class="aln-form">
+        <div class="style-form">
   <p> Hi my name is: {{user.name}}  </p>
   <label for="name">   Do you want change your name </label>
   <input type="text" name="name">
@@ -59,5 +70,7 @@ UPDATE/EDIT YOUR PROFILE
 </form>
 
 <a href="events/create-event">Become a host</a>
-
-
+</div>
+</div>
+</div>
+</div>
