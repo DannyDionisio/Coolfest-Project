@@ -6,6 +6,10 @@ body {
 a {
   color: #00b7ff; }
 
+/*NAVBAR*/
+.nav-link {
+  font-size: x-large; }
+
 /*INDEX*/
 .bg-index {
   background-image: url(../images/cover_event.jpg);
@@ -77,6 +81,7 @@ a {
   width: 30%;
   display: flex;
   justify-content: center;
+  flex-direction: column;
   align-self: center;
   border-radius: 5px; }
 
@@ -95,7 +100,8 @@ a {
   width: -webkit-fill-available;
   color: white;
   background-color: #009a3d;
-  font-weight: bold; }
+  font-weight: bold;
+  margin: 0 18px; }
 
 input:required + .help-text::before {
   content: '*Required';
@@ -106,5 +112,17 @@ input:required + .help-text::before {
   border-radius: 4px;
   height: 38px;
   border: 1px solid #cccccc; }
+
+.link-signup {
+  background-color: #d9d9d9;
+  color: #009a3d;
+  height: 65px;
+  border-radius: 0 0 5px 5px;
+  display: flex;
+  align-items: center; }
+
+p {
+  padding-left: 20px;
+  margin-bottom: 0; }
 
 /*# sourceMappingURL=style.css.map */
