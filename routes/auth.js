@@ -3,7 +3,6 @@ const router = express.Router();
 const User = require("../models/user");
 const bcrypt = require("bcrypt");
 const multer = require("multer");
-const Picture = require("../models/picture");
 //const bcryptSalt = 10;
 
 // ------login-----
