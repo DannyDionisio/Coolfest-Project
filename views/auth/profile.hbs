@@ -19,20 +19,12 @@
    <div class="style-form">
               <h3>UPDATE/EDIT YOUR PROFILE </h3>
 
-  Upload your photo
-  <form action="/upload" method="post" enctype="multipart/form-data" class="box-login">
-    <input type="text" name="name">
-    <input type="file" name="photo">
-    <input type="submit" value="Save">
-  </form>
-  </section>
+ 
 
 <div class="user-pic">
-  {{#each user}}
     <div class="user-item">
       <img src="{{user.imgPath}}" alt="">
     </div>
-  {{/each}}
 </div>
 
 <form action="/auth/profile" method="POST" id="form" class="box-login" class="box-login">
@@ -70,7 +62,7 @@
   <button type="submit">SUBMIT</button>
 </form>
 
-<a href="events/create-event">Become a host</a>
+<a href="/events/create-event">Become a host</a>
 </div>
 </div>
 </div>

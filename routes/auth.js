@@ -3,7 +3,7 @@ const router = express.Router();
 const User = require("../models/user");
 const bcrypt = require("bcrypt");
 const multer = require("multer");
-const uploadCloud = require('../config/cloudinary.js');
+const uploadCloud = require("../config/cloudinary.js");
 //const bcryptSalt = 10;
 
 // ------login-----
@@ -49,7 +49,9 @@ router.get("/signup", (req, res, next) => {
   res.render("auth/signup");
 });
 
-router.post("/signup", (req, res, next) => {
+router.post("/signup", uploadCloud.single("photo"), (req, res, next) => {
+  const imgPath = req.file.url;
+  const imgName = req.file.originalname;
   const {
     name,
     password,
@@ -66,7 +68,9 @@ router.post("/signup", (req, res, next) => {
     phone,
     food_preferences,
     cooking_Skills,
-    Quote
+    Quote,
+    imgPath,
+    imgName
   })
     .then(() => {
       res.redirect("/auth/login");
@@ -75,10 +79,6 @@ router.post("/signup", (req, res, next) => {
       console.log(err);
     });
 });
-
-// router.get("/profile", (req, res, next) => {
-//   res.render("auth/profile");
-// });
 
 router.get("/profile", (req, res, next) => {
   console.log("user", req.session.currentUser);
@@ -118,27 +118,6 @@ router.put("/profile/:id", (req, res, next) => {
     });
 });
 
-// Route to upload from the profile picture
-
-// router.get('/auth/profile', function(req, res, next) {
-//   Picture.find((err, pictures) => {
-//     res.render('profile', {pictures})
-//   })
-// });
-
-const upload = multer({ dest: "./public/uploads/" });
-
-router.post("/upload", upload.single("photo"), (req, res) => {
-  const pic = new Picture({
-    name: req.body.name,
-    path: `/uploads/${req.file.filename}`,
-    originalName: req.file.originalname
-  });
-
-  pic.save(err => {
-    res.redirect("/auth/profile");
-  });
-});
 
 module.exports = router;
 
@@ -146,18 +125,3 @@ module.exports = router;
 //GET EDIT PROFILE VIEW
 
 //POST(?) EDIT Profile VIEW FORM
-
-
-
-router.post('/auth/profile', uploadCloud.single('photo'), (req, res, next) => {
-  const imgPath = req.file.url;
-  const imgName = req.file.originalname;
-  const newMovie = new Movie({imgPath, imgName})
-  newMovie.save()
-  .then(movie => {
-    res.redirect('/auth/profile');
-  })
-  .catch(error => {
-    console.log(error);
-  });
-});

@@ -22,7 +22,6 @@ const uploadCloud = require('../config/cloudinary.js');
 
 router.post("/create-event", uploadCloud.single('photo'), (req, res, next) => {
   const { title, date, capacity, place, contacts, recipe, comment } = req.body;
-  
   const imgPath = req.file.url;
   const imgName = req.file.originalname;
 

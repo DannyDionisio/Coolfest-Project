@@ -10,36 +10,47 @@
     </ul>
   </nav>
 </header>
-<form action="/auth/signup" method="POST" id="form">
-  <h2>Sign Up</h2>
-  
-  <label for="">Name:</label>
-  <input type="text" name="name">
-  
-  <label for="">Password:</label>
-  <input type="password" name="password">
-  
-  <label for="">Email:</label>
-  <input type="email" name="email">
-  
-  <label for="">Phone:</label>
-  <input type="number" name="phone">
-  
-  <label for="">Food Preferences:</label>
-  <input type="checkbox" name="food_preferences" value="burguer">Burguer<br>
-  <input type="checkbox" name="food_preferences" value="italian">Italian<br>  
-  <input type="checkbox" name="food_preferences" value="vegetarian">Vegetarian<br>
-  <input type="checkbox" name="food_preferences" value="eggs">Eggs<br>
-  <input type="checkbox" name="food_preferences" value="gluten">Gluten<br>
+<div class="bg-log-signup">
+  <h2>Register at a Collaboration Dinner Platform <br>and build the best recipes together!</h2>
+  <div class="container-log-sign">
+    <form action="/auth/signup" method="POST" enctype="multipart/form-data" id="form">
+      <div class="aln-form">
+        <div class="style-form">
+          <label for="">Username:</label>
+          <input type="text" name="name">
 
-  <label for="">Cooking Skills:</label>
-  <input type="checkbox" name="cooking_Skills" value="Professional Dish Washer"> Professional Dish Washer <br>
-  <input type="checkbox" name="cooking_Skills" value="Jedi Chef"> Jedi Chef <br>
-  <input type="checkbox" name="cooking_Skills" value="Wine Guy"> Wine Guy <br>
-  <input type="checkbox" name="cooking_Skills" value="I know how to fry an egg"> I know how to fry an egg <br>
-  <input type="checkbox" name="cooking_Skills" value="Padawan Chef">Padawan Chef<br>
+          <label for="">Password:</label>
+          <input type="password" name="password">
 
-  <label for="">Resume yourself in one quote:</label>
-  <input type="text" name="Quote">
-  <button type="submit">ADD</button>
-</form>
+          <label for="">Email:</label>
+          <input type="email" name="email">
+
+          <label for="">Phone:</label>
+          <input type="number" name="phone">
+
+          <label for="">Food Preferences:</label>
+          
+          <input type="checkbox" name="food_preferences" value="burguer">Burguer
+          <input type="checkbox" name="food_preferences" value="italian">Italian  
+          <input type="checkbox" name="food_preferences" value="vegetarian">Vegetarian
+          <input type="checkbox" name="food_preferences" value="eggs">Eggs
+          <input type="checkbox" name="food_preferences" value="gluten">Gluten
+
+          <label for="">Cooking Skills:</label>
+          <input type="checkbox" name="cooking_Skills" value="Professional Dish Washer"> Professional Dish Washer 
+          <input type="checkbox" name="cooking_Skills" value="Jedi Chef"> Jedi Chef 
+          <input type="checkbox" name="cooking_Skills" value="Wine Guy"> Wine Guy 
+          <input type="checkbox" name="cooking_Skills" value="I know how to fry an egg"> I know how to fry an egg 
+          <input type="checkbox" name="cooking_Skills" value="Padawan Chef">Padawan Chef
+
+          <label for="">Resume yourself in one quote:</label>
+          <input type="text" name="Quote">
+
+          <label for="">Your picture</label>
+          <input type="file" name="photo">
+          <button type="submit">Sign Up</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

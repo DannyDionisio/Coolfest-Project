@@ -15,48 +15,41 @@
 <h2> CREATE YOUR EVENT</h2>
 
 <div class="container-log-sign event">
-<form action="/events/create-event" method="POST" id="form" class="box-login">
-<div class="aln-form">
-<div class="style-form">
-  <label for="">Title:</label><br/>
-  <input type="text" name="title">
-    <span class="help-text"></span>
-    </div>
-    <div class="style-form">
+<form action="/events/create-event" method="POST" id="form" class="box-login" enctype="multipart/form-data">
+  <div class="aln-form">
+  <div class="style-form">
+    <label for="">Title:</label><br/>
+    <input type="text" name="title">
+      <span class="help-text"></span>
+      </div>
+      <div class="style-form">
+      
+    <label for="">Date:</label><br/>
+    <input type="date" name="date">
+    
+    <label for="">Capacity:</label><br/>
+    <input type="number" name="capacity">
+    
+    <label for="">Place:</label><br/>
+    <input type="text" name="place">
+    
+    <label for="">Contact</label><br/>
+    <input type="number" name="contacts">
+    <label for="">Recipe:</label>
   
-  <label for="">Date:</label><br/>
-  <input type="date" name="date">
+    <select name="recipe" id="recipeSelect" class="custom-select"><br/>
+      <option selected>Choose a recipe to cook</option>
+      {{#each recipes}}
+        <option value="{{this.title}}">{{this.title}}</option>
+      {{/each}}
+    </select>
+    
+    <label for="">Comment:</label><br/>
+    <input type="datetime" name="comment">
   
-  <label for="">Capacity:</label><br/>
-  <input type="number" name="capacity">
   
-  <label for="">Place:</label><br/>
-  <input type="text" name="place">
   
-  <label for="">Contact</label><br/>
-  <input type="number" name="contacts">
-  <label for="">Recipe:</label>
- 
-  <select name="recipe" id="recipeSelect" class="custom-select"><br/>
-    <option selected>Choose a recipe to cook</option>
-    {{#each recipes}}
-      <option value="{{this.title}}">{{this.title}}</option>
-    {{/each}}
-  </select>
-  
-  <label for="">Comment:</label><br/>
-  <input type="datetime" name="comment">
- 
-  <button type="submit">Create Your Event!</button>
-
-  <h2>Upload Event Picture</h2>
-<form action="/events/create-event" method="post" enctype="multipart/form-data" class="box-login">
+    <label for="">Upload Event Picture</label>
     <input type="file" name="photo">
-  <input type="submit" value="SAVE">
+    <button type="submit">Create Your Event!</button>
 </form>
-
-
-
-</div>
-  </div>
-  </div>
