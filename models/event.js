@@ -32,10 +32,11 @@ const eventSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  comment: {
-    type: String
-  }
+  comment: String,
+  imgName: String,
+  imgPath: String
 });
+
 
 
 const Event = mongoose.model("Event", eventSchema);

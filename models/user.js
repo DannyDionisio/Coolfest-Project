@@ -35,9 +35,9 @@ const userSchema = new mongoose.Schema({
   Quote: {
     type: String
   },
-  image: {
-    type: String
-  }
+
+  imgName: String,
+  imgPath: String
 
   // {timestamps:true},
 });

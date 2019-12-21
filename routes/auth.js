@@ -98,7 +98,7 @@ router.get("/profile", (req, res, next) => {
 //   })
 // });
 
-router.put("/profile/:id", (req, res, next) => {
+router.post("/profile/:id", (req, res, next) => {
   const updatedUser = {
     name: req.body.name,
     email: req.body.email,
