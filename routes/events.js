@@ -4,7 +4,7 @@ const express = require("express");
 const router = express.Router();
 const Event = require("../models/event");
 const axios = require("axios");
-
+const uploadCloud = require('../config/cloudinary.js');
 
 //------CRIAR VIEWWW
 
@@ -20,8 +20,12 @@ const axios = require("axios");
 });
 
 
-router.post("/create-event", (req, res, next) => {
+router.post("/create-event", uploadCloud.single('photo'), (req, res, next) => {
   const { title, date, capacity, place, contacts, recipe, comment } = req.body;
+  
+  const imgPath = req.file.url;
+  const imgName = req.file.originalname;
+
   Event.create({
     title,
     date,
@@ -29,7 +33,9 @@ router.post("/create-event", (req, res, next) => {
     place,
     contacts,
     recipe,
-    comment
+    comment,
+    imgName, 
+    imgPath
   })
     .then(event => {  
       res.redirect("/events");
