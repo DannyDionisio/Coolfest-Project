@@ -6,6 +6,9 @@ body {
 a {
   color: #00b7ff; }
 
+nav-event {
+  float: center; }
+
 /*INDEX*/
 .bg-index {
   background-image: url(../images/cover_event.jpg);
@@ -80,6 +83,9 @@ a {
   align-self: center;
   border-radius: 5px; }
 
+.event {
+  width: 50%; }
+
 .box-login {
   width: -webkit-fill-available;
   padding: 25px; }
@@ -95,7 +101,8 @@ a {
   width: -webkit-fill-available;
   color: white;
   background-color: #009a3d;
-  font-weight: bold; }
+  font-weight: bold;
+  margin: 0 18px; }
 
 input:required + .help-text::before {
   content: '*Required';

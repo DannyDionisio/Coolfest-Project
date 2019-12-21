@@ -12,6 +12,9 @@ a {
   color: $link-color;
 }
 
+
+
+
 /*INDEX*/
 .bg-index {
   background-image: url(../images/cover_event.jpg);
@@ -96,6 +99,11 @@ a {
   justify-content: center;
   align-self: center;
   border-radius: 5px;
+}
+
+
+.event {
+  width: 50%;
 }
 
 .box-login {
