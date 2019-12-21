@@ -149,6 +149,7 @@ input:required + .help-text::before {
   border-radius: 0 0 5px 5px;
   display: flex;
   align-items: center;
+  border-top: 1px solid #eeeeee;
 }
 
 p {

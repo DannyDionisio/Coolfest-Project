@@ -122,7 +122,8 @@ input:required + .help-text::before {
   height: 65px;
   border-radius: 0 0 5px 5px;
   display: flex;
-  align-items: center; }
+  align-items: center;
+  border-top: 1px solid #eeeeee; }
 
 p {
   padding-left: 20px;
