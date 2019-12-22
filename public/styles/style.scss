@@ -158,3 +158,35 @@ p {
   padding-left: 20px;
   margin-bottom: 0;
 }
+
+.food-options, .skills-options {
+  margin: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.signup-container {
+  width: 50%;
+}
+
+.bg-signup {
+  height: unset;
+}
+
+label {
+  padding: 10px 0;
+  margin: unset;
+}
+
+.upload-pic {
+  padding-bottom: 20px;
+}
+
+.style-container {
+  padding: 50px 50px 40px 50px;
+}
+
+.btn-signup {
+  margin: unset;
+}

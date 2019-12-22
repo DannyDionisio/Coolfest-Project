@@ -10,47 +10,53 @@
     </ul>
   </nav>
 </header>
-<div class="bg-log-signup">
+<div class="bg-log-signup bg-signup">
   <h2>Register at a Collaboration Dinner Platform <br>and build the best recipes together!</h2>
-  <div class="container-log-sign">
+  <div class="container-log-sign signup-container">
     <form action="/auth/signup" method="POST" enctype="multipart/form-data" id="form">
       <div class="aln-form">
-        <div class="style-form">
+        <div class="style-form style-container">
           <label for="">Username:</label>
-          <input type="text" name="name">
+          <input type="text" name="name" id="required-name">
 
           <label for="">Password:</label>
-          <input type="password" name="password">
+          <input type="password" name="password" id="required-name">
 
           <label for="">Email:</label>
-          <input type="email" name="email">
+          <input type="email" name="email" id="required-name">
 
           <label for="">Phone:</label>
-          <input type="number" name="phone">
+          <input type="number" name="phone" id="required-name">
 
-          <label for="">Food Preferences:</label>
-          
-          <input type="checkbox" name="food_preferences" value="burguer">Burguer
-          <input type="checkbox" name="food_preferences" value="italian">Italian  
-          <input type="checkbox" name="food_preferences" value="vegetarian">Vegetarian
-          <input type="checkbox" name="food_preferences" value="eggs">Eggs
-          <input type="checkbox" name="food_preferences" value="gluten">Gluten
-
-          <label for="">Cooking Skills:</label>
-          <input type="checkbox" name="cooking_Skills" value="Professional Dish Washer"> Professional Dish Washer 
-          <input type="checkbox" name="cooking_Skills" value="Jedi Chef"> Jedi Chef 
-          <input type="checkbox" name="cooking_Skills" value="Wine Guy"> Wine Guy 
-          <input type="checkbox" name="cooking_Skills" value="I know how to fry an egg"> I know how to fry an egg 
-          <input type="checkbox" name="cooking_Skills" value="Padawan Chef">Padawan Chef
-
+          <div class="skills-container">
+            <label for="">Food Preferences:</label>
+            <div class="food-options">
+              <input type="checkbox" name="food_preferences" value="burguer">Burguer
+              <input type="checkbox" name="food_preferences" value="italian">Italian  
+              <input type="checkbox" name="food_preferences" value="vegetarian">Vegetarian
+              <input type="checkbox" name="food_preferences" value="eggs">Eggs
+              <input type="checkbox" name="food_preferences" value="gluten">Gluten
+            </div>
+          </div>
+          <div class="skills-container">
+            <label for="">Cooking Skills:</label>
+            <div class="skills-options">
+              <input type="checkbox" name="cooking_Skills" value="Professional Dish Washer"> Professional Dish Washer 
+              <input type="checkbox" name="cooking_Skills" value="Jedi Chef"> Jedi Chef 
+              <input type="checkbox" name="cooking_Skills" value="Wine Guy"> Wine Guy 
+              <input type="checkbox" name="cooking_Skills" value="I know how to fry an egg"> I know how to fry an egg 
+              <input type="checkbox" name="cooking_Skills" value="Padawan Chef">Padawan Chef
+            </div>
+          </div>
           <label for="">Resume yourself in one quote:</label>
-          <input type="text" name="Quote">
+          <input type="text" name="Quote" id="required-name">
 
-          <label for="">Your picture</label>
-          <input type="file" name="photo">
-          <button type="submit">Sign Up</button>
+          <label for="">Your picture:</label>
+          <input type="file" name="photo" class="upload-pic">
+          <button type="submit" class="style-btn btn-signup">Sign Up</button>
         </div>
       </div>
     </form>
+    <div class="link-signup"></div>
   </div>
 </div>
