@@ -22,7 +22,7 @@ const eventSchema = new mongoose.Schema({
   place: {
     type: String,
     required: true
-  },
+  
   contacts: {
     type: String,
     trim: true,
