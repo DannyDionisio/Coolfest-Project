@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "start": "node ./server",
+    "start": "node ../bin/www",
     "dev": "nodemon ./server",
     "dev:debug": "DEBUG=comeal* npm run dev"
   },
