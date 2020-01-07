@@ -23,7 +23,7 @@
 
 <div class="user-pic">
     <div class="user-item">
-      <img src="{{user.imgPath}}" alt="">
+      <img src="{{user.imgPath}}" alt="" >
     </div>
 </div>
 
@@ -37,7 +37,10 @@
   <p> Phone number: {{user.phone}}  </p>
   <label for="">Phone:</label>
   <input type="number" name="phone">
-  
+
+<br/>
+<br/>
+
   <p> My Food preferences: {{user.food_preferences}}  </p>
 
   <label for="">Food Preferences:</label>
@@ -47,6 +50,8 @@
   <input type="checkbox" name="food_preferences" value="eggs">Eggs<br>
   <input type="checkbox" name="food_preferences" value="gluten">Gluten<br>
 
+<br/>
+<br/>
   <p> My Cooking Skills: {{user.cooking_Skills}}  </p>
   <label for="">Cooking Skills:</label>
   <input type="checkbox" name="cooking_Skills" value="Professional Dish Washer"> Professional Dish Washer <br>
@@ -55,9 +60,12 @@
   <input type="checkbox" name="cooking_Skills" value="I know how to fry an egg"> I know how to fry an egg <br>
   <input type="checkbox" name="cooking_Skills" value="Padawan Chef">Padawan Chef<br>
 
+<br/>
+<br/>
+
   <p> Change my Quote: {{user.Quote}}  </p>
-  
-  <label for="">Resume yourself in one quote:</label>
+  <br/>
+  <label for="">Describe yourself in one quote:</label>
   <input type="text" name="Quote">
   <button type="submit">SUBMIT</button>
 </form>
