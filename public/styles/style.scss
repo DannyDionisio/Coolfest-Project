@@ -17,6 +17,9 @@ a {
   font-size: x-large;
 }
 
+.nav  h2, h1 {
+  padding: 15px;
+}
 
 
 /*INDEX*/
@@ -96,6 +99,13 @@ a {
   color: #113c2b;
 }
 
+.bg-log-signup h1 {
+  text-align: center;
+  color: #113c2b;
+  margin-top: -25px;
+  padding-bottom: 25px;
+}
+
 .container-log-sign {
   background-color: white;
   width: 30%;
@@ -105,7 +115,6 @@ a {
   align-self: center;
   border-radius: 5px;
 }
-
 
 .event {
   width: 50%;
@@ -124,7 +133,6 @@ a {
 }
 
 .style-btn {
-  padding: 10px;
   width: -webkit-fill-available;
   color: white;
   background-color: #009a3d;
@@ -189,4 +197,27 @@ label {
 
 .btn-signup {
   margin: unset;
+}
+
+/*PROFILE*/
+
+.user-pic img {
+  width: 30%;
+}
+
+.profile-ctn {
+  width: 60%;
+  padding: 55px;
+}
+
+.flex-profile {
+  display: flex;
+}
+
+.style-form p {
+  padding: 10px 0;
+}
+
+.pref-container h3 {
+  padding-top: 30px;
 }
