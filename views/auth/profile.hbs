@@ -1,18 +1,16 @@
 <header>
   <nav class="navbar navbar-light bg-light">
-    <a class="navbar-brand" href="#">
+    <a class="navbar-brand" href="../">
       <img src="/images/logo.png" width="100" height="120" alt="logo">
     </a>
-    <ul class="nav">
-      <li class="nav-item">
-        <h2> WELCOME BACK!</h2> <h1> {{user.name}}</h1>
-      </li>
-    </ul>
+    <div class="nav">
+      <h2> WELCOME BACK!</h2>
+      <h1> {{user.name}}</h1>
+    </div>
   </nav>
 </header>
-</br>
-
 <div class="bg-log-signup">
+<<<<<<< HEAD
   <div class="container-log-sign event">
 <section>
    <div class="aln-form">
@@ -75,3 +73,54 @@
 </div>
 </div>
 </div>
+=======
+  <h1>UPDATE/EDIT YOUR PROFILE</h1>
+  <div class="container-log-sign profile-ctn">
+    <div class="user-pic flex-profile">
+      <img src="{{user.imgPath}}" alt=""/>
+      <form action="/auth/profile" method="POST" id="form" class="box-login" class="box-login">
+        <div class="aln-form">
+          <div class="style-form">
+            <h3> Hi my name is: {{user.name}} </h3>
+            <label for="name">Do you want change your name?</label>
+            <input type="text" name="name">
+            <label for="phone">Edit your Phone:</label>
+            <input type="number" name="phone">
+            <p> Phone number: {{user.phone}} </p>
+          </div>
+        </div>
+    </div>
+    <div class="pref-container">
+      <h3> My Food preferences: {{user.food_preferences}}  </h3>
+      <div class="skills-container">
+        <label for="food_preferences">Food Preferences:</label>
+        <div class="food-options">
+          <input type="checkbox" name="food_preferences" value="burguer">Burguer<br>
+          <input type="checkbox" name="food_preferences" value="italian">Italian<br>  
+          <input type="checkbox" name="food_preferences" value="vegetarian">Vegetarian<br>
+          <input type="checkbox" name="food_preferences" value="eggs">Eggs<br>
+          <input type="checkbox" name="food_preferences" value="gluten">Gluten<br>
+        </div>
+      </div>
+      <h3> My Cooking Skills: {{user.cooking_Skills}}  </h3>
+      <div class="skills-container">
+        <label for="cooking_Skills">Cooking Skills:</label>
+        <div class="food-options">
+          <input type="checkbox" name="cooking_Skills" value="Professional Dish Washer"> Professional Dish Washer <br>
+          <input type="checkbox" name="cooking_Skills" value="Jedi Chef"> Jedi Chef <br>
+          <input type="checkbox" name="cooking_Skills" value="Wine Guy"> Wine Guy <br>
+          <input type="checkbox" name="cooking_Skills" value="I know how to fry an egg"> I know how to fry an egg <br>
+          <input type="checkbox" name="cooking_Skills" value="Padawan Chef">Padawan Chef<br>
+        </div>
+      </div>
+    </div>
+      <h3> Change my Quote: {{user.Quote}}  </h3>
+      <label for="">Resume yourself in one quote:</label>
+      <input type="text" name="Quote">
+      <button type="submit">SUBMIT</button>
+      </form>
+    </div>
+    <a href="/events/create-event">Become a host</a>
+  </div>
+<div>
+>>>>>>> ffc38b73e75ea2a2c6245cd64dc0d4bb8a059d2f

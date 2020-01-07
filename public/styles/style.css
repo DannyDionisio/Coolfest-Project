@@ -10,6 +10,9 @@ a {
 .nav-link {
   font-size: x-large; }
 
+.nav h2, h1 {
+  padding: 15px; }
+
 /*INDEX*/
 .bg-index {
   background-image: url(../images/cover_event.jpg);
@@ -76,6 +79,12 @@ a {
   font-size: 45px;
   color: #113c2b; }
 
+.bg-log-signup h1 {
+  text-align: center;
+  color: #113c2b;
+  margin-top: -25px;
+  padding-bottom: 25px; }
+
 .container-log-sign {
   background-color: white;
   width: 30%;
@@ -99,7 +108,6 @@ a {
   font-weight: bold; }
 
 .style-btn {
-  padding: 10px;
   width: -webkit-fill-available;
   color: white;
   background-color: #009a3d;
