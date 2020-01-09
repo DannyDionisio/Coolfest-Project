@@ -49,10 +49,11 @@ router.get("/signup", (req, res, next) => {
   res.render("auth/signup");
 });
 
-router.post("/signup", (req, res, next) => {
-  console.log(" something")
-  // const imgPath = req.file.url;
-  // const imgName = req.file.originalname;
+router.post("/signup", uploadCloud.single("photo"), (req, res, next) => {
+  console.log("body", req.body);
+  const imgPath = req.file.url;
+  const imgName = req.file.originalname;
+
   const {
     name,
     password,
@@ -70,15 +71,15 @@ router.post("/signup", (req, res, next) => {
     food_preferences,
     cooking_Skills,
     Quote,
-    // imgPath,
-    // imgName
+    imgPath,
+    imgName
   })
     .then(() => {
-      console.log('>>>>>>')
+      console.log(">>>>>>");
       res.redirect("/auth/login");
     })
     .catch(err => {
-      console.log("this is it",err);
+      console.log("this is it", err);
     });
 });
 
@@ -119,7 +120,6 @@ router.put("/profile/:id", (req, res, next) => {
       next(error);
     });
 });
-
 
 module.exports = router;
 

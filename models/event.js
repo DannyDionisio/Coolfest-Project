@@ -22,7 +22,7 @@ const eventSchema = new mongoose.Schema({
   place: {
     type: String,
     required: true
-  
+  },
   contacts: {
     type: String,
     trim: true,
@@ -36,8 +36,6 @@ const eventSchema = new mongoose.Schema({
   imgName: String,
   imgPath: String
 });
-
-
 
 const Event = mongoose.model("Event", eventSchema);
 module.exports = Event;
