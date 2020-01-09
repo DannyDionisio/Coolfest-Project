@@ -17,9 +17,42 @@
 <div class="container-log-sign event">
 
 <form action="/events/create-event" method="POST" enctype="multipart/form-data">
-  <label>title</label>
-  <input type="text" name="title">
-  <input type="submit">Create Your Event!</input>
+  <div class="aln-form">
+  <div class="style-form">
+    <label for="">Title:</label><br/>
+    <input type="text" name="title">
+      <span class="help-text"></span>
+      </div>
+      <div class="style-form">
+      
+    <label for="">Date:</label><br/>
+    <input type="date" name="date">
+    
+    <label for="">Capacity:</label><br/>
+    <input type="number" name="capacity">
+    
+    <label for="">Place:</label><br/>
+    <input type="text" name="place">
+    
+    <label for="">Contact</label><br/>
+    <input type="number" name="contacts">
+    <label for="">Recipe:</label>
+  
+    <select name="recipe" id="recipeSelect" class="custom-select"><br/>
+      <option selected>Choose a recipe to cook</option>
+      {{#each recipes}}
+        <option value="{{this.title}}">{{this.title}}</option>
+      {{/each}}
+    </select>
+    
+    <label for="">Comment:</label><br/>
+    <input type="datetime" name="comment">
+  
+  
+  
+    <label for="">Upload Event Picture</label>
+    <input type="file" name="photo">
+    <button type="submit">Create Your Event!</button>
 </form>
 
 

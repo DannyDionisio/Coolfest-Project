@@ -19,8 +19,9 @@ router.get("/create-event", (req, res, next) => {
     });
 });
 
-/*router.post("/create-event", uploadCloud.single('photo'), (req, res, next) => {
+router.post("/create-event", uploadCloud.single('photo'), (req, res, next) => {
   const { title, date, capacity, place, contacts, recipe, comment } = req.body;
+  console.log("title", title);
   const imgPath = req.file.url;
   const imgName = req.file.originalname;
 
@@ -39,26 +40,8 @@ router.get("/create-event", (req, res, next) => {
       res.redirect("/events");
     })
     .catch(next);
-});*/
-
-router.post("/create-event", (req, res, next) => {
-  const { title, date, capacity, place, contacts, recipe, comment } = req.body;
-
-  console.log("title", req.body.title);
-  Event.create({
-    title,
-    date,
-    capacity,
-    place,
-    contacts,
-    recipe,
-    comment
-  })
-    .then(event => {
-      res.redirect("/events");
-    })
-    .catch(next);
 });
+
 
 // -- edit events --
 //GET EDIT EVENTS VIEW
