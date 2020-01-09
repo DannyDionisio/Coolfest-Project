@@ -34,9 +34,9 @@ router.post("/create-event", uploadCloud.single('photo'), (req, res, next) => {
     recipe,
     comment,
     imgName, 
-    imgPath
+    imgPathgit
   })
-    .then(event => {  
+    .then(event => {
       res.redirect("/events");
     })
     .catch(next);

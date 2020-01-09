@@ -4,7 +4,7 @@ const User = require("../models/user");
 const bcrypt = require("bcrypt");
 const multer = require("multer");
 const uploadCloud = require("../config/cloudinary.js");
-//const bcryptSalt = 10;
+// const bcryptSalt = 10;
 
 // ------login-----
 router.get("/login", (req, res, next) => {
@@ -49,9 +49,10 @@ router.get("/signup", (req, res, next) => {
   res.render("auth/signup");
 });
 
-router.post("/signup", uploadCloud.single("photo"), (req, res, next) => {
-  const imgPath = req.file.url;
-  const imgName = req.file.originalname;
+router.post("/signup", (req, res, next) => {
+  console.log(" something")
+  // const imgPath = req.file.url;
+  // const imgName = req.file.originalname;
   const {
     name,
     password,
@@ -69,14 +70,15 @@ router.post("/signup", uploadCloud.single("photo"), (req, res, next) => {
     food_preferences,
     cooking_Skills,
     Quote,
-    imgPath,
-    imgName
+    // imgPath,
+    // imgName
   })
     .then(() => {
+      console.log('>>>>>>')
       res.redirect("/auth/login");
     })
     .catch(err => {
-      console.log(err);
+      console.log("this is it",err);
     });
 });
 

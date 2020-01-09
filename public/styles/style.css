@@ -137,46 +137,8 @@ p {
   padding-left: 20px;
   margin-bottom: 0; }
 
-.food-options, .skills-options {
-  margin: 10px 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline; }
-
-.signup-container {
-  width: 50%; }
-
-.bg-signup {
-  height: unset; }
-
-label {
-  padding: 10px 0;
-  margin: unset; }
-
-.upload-pic {
-  padding-bottom: 20px; }
-
-.style-container {
-  padding: 50px 50px 40px 50px; }
-
-.btn-signup {
-  margin: unset; }
-
-/*PROFILE*/
-.user-pic img {
-  width: 30%; }
-
-.profile-ctn {
-  width: 60%;
-  padding: 55px; }
-
-.flex-profile {
-  display: flex; }
-
-.style-form p {
-  padding: 10px 0; }
-
-.pref-container h3 {
-  padding-top: 30px; }
+.event-pic {
+  width: 100px;
+  height: auto; }
 
 /*# sourceMappingURL=style.css.map */

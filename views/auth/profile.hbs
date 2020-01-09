@@ -10,6 +10,70 @@
   </nav>
 </header>
 <div class="bg-log-signup">
+<<<<<<< HEAD
+  <div class="container-log-sign event">
+<section>
+   <div class="aln-form">
+   <div class="style-form">
+              <h3>UPDATE/EDIT YOUR PROFILE </h3>
+
+ 
+
+<div class="user-pic">
+    <div class="user-item">
+      <img src="{{user.imgPath}}" alt="" >
+    </div>
+</div>
+
+<form action="/auth/profile" method="POST" id="form" class="box-login" class="box-login">
+    <div class="aln-form">
+        <div class="style-form">
+  <p> Hi my name is: {{user.name}}  </p>
+  <label for="name">   Do you want change your name </label>
+  <input type="text" name="name">
+  
+  <p> Phone number: {{user.phone}}  </p>
+  <label for="">Phone:</label>
+  <input type="number" name="phone">
+
+<br/>
+<br/>
+
+  <p> My Food preferences: {{user.food_preferences}}  </p>
+
+  <label for="">Food Preferences:</label>
+  <input type="checkbox" name="food_preferences" value="burguer">Burguer<br>
+  <input type="checkbox" name="food_preferences" value="italian">Italian<br>  
+  <input type="checkbox" name="food_preferences" value="vegetarian">Vegetarian<br>
+  <input type="checkbox" name="food_preferences" value="eggs">Eggs<br>
+  <input type="checkbox" name="food_preferences" value="gluten">Gluten<br>
+
+<br/>
+<br/>
+  <p> My Cooking Skills: {{user.cooking_Skills}}  </p>
+  <label for="">Cooking Skills:</label>
+  <input type="checkbox" name="cooking_Skills" value="Professional Dish Washer"> Professional Dish Washer <br>
+  <input type="checkbox" name="cooking_Skills" value="Jedi Chef"> Jedi Chef <br>
+  <input type="checkbox" name="cooking_Skills" value="Wine Guy"> Wine Guy <br>
+  <input type="checkbox" name="cooking_Skills" value="I know how to fry an egg"> I know how to fry an egg <br>
+  <input type="checkbox" name="cooking_Skills" value="Padawan Chef">Padawan Chef<br>
+
+<br/>
+<br/>
+
+  <p> Change my Quote: {{user.Quote}}  </p>
+  <br/>
+  <label for="">Describe yourself in one quote:</label>
+  <input type="text" name="Quote">
+  <button type="submit">SUBMIT</button>
+</form>
+
+<a href="/events/create-event">Become a host</a>
+</div>
+</div>
+</div>
+</div>
+=======
   <h1>UPDATE/EDIT YOUR PROFILE</h1>
   <div class="container-log-sign profile-ctn">
     <div class="user-pic flex-profile">
@@ -59,3 +123,4 @@
     <a href="/events/create-event">Become a host</a>
   </div>
 <div>
+>>>>>>> ffc38b73e75ea2a2c6245cd64dc0d4bb8a059d2f
