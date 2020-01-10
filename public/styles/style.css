@@ -141,4 +141,22 @@ p {
   width: 100px;
   height: auto; }
 
+/*EVENTS*/
+.ctn-wrap {
+  display: flex;
+  flex-wrap: wrap; }
+
+.ctn-card {
+  display: flex;
+  flex-direction: column;
+  padding: 0 85px 65px; }
+
+.bg-event {
+  background-image: url(../images/kitchen.jpg);
+  background-repeat: no-repeat;
+  background-size: cover; }
+
+.bg-event h1 {
+  padding: 50px 80px 0; }
+
 /*# sourceMappingURL=style.css.map */

@@ -1,35 +1,38 @@
-<h2> EVENT LIST </h2>
 
-<h1> Choose your Co Meal that you want to go </h1>
-
-<h1>{{title}}</h1>
-<ul>
-  {{#each events}}
-  <li>
-    <h5>
-    <a href="/events/{{ this._id }}">
-     <p> {{ this.title }} </p>,
-     <div class="event-pic">
-      <div class="event-item">
-        <img src="{{this.imgPath}}" alt="">
+<header>
+  <nav class="navbar navbar-light bg-light">
+    <a class="navbar-brand" href="../">
+      <img src="/images/logo.png" width="100" height="120" alt="logo">
+    </a>
+  </nav>
+</header>
+<div class="bg-event">
+  <h1> Choose your Co Meal that you want to go </h1>
+  <h1>{{title}}</h1>
+  <div class="ctn-wrap">
+    {{#each events}}
+    <div class="ctn-card">
+      <div class="card" style="width: 18rem;">
+        <img src="{{this.imgPath}}" class="card-img-top" alt="Event Image">
+        <div class="card-body">
+          <h5> {{ this.title }} </h5>
+          <p class="card-text">Description: {{ this.comment }}</p>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Recipe: {{ this.recipe }}</li>
+          <li class="list-group-item">When: {{ this.date }}</li>
+          <li class="list-group-item">Where: {{ this.place }}</li>
+          <li class="list-group-item">CO MEAL attendees: {{ this.capacity }}</li>  
+        </ul>
+        <div class="card-body">
+          <a href="/events/{{ this._id }}" class="card-link">See this event</a>
+        </div>
       </div>
-    </div> 
-    When: {{ this.date }} <br />,
-   CO MEAL attendees: {{ this.capacity }}  <br />,
-      Where: {{ this.place }} <br />,
-   Recipe:   {{ this.recipe }} <br />,
-  Description: {{ this.comment }},  
-    </a>
-    {{!-- - {{ this.capacity }} --}}
-    <a href="/events/{{ this._id }}/edit">
-      Edit
-    </a>
-    <form action="/events/{{ this._id }}/delete" method="POST">
-      <button> Delete </button>
-    </form>
-    </h5>
-  </li>
-  {{/each}}
-</ul>
-</a>
-
+      <a href="/events/{{ this._id }}/edit">Edit</a>
+      <form action="/events/{{ this._id }}/delete" method="POST">
+        <button> Delete </button>
+      </form>
+    </div>
+    {{/each}}
+  </div>
+</div>

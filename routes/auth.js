@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const User = require("../models/user");
-const bcrypt = require("bcrypt");
+const bcrypt = require("bcrypt"); /*DONT'T TOUCH*/
 const multer = require("multer");
 const uploadCloud = require("../config/cloudinary.js");
 // const bcryptSalt = 10;
@@ -119,6 +119,12 @@ router.put("/profile/:id", (req, res, next) => {
     .catch(error => {
       next(error);
     });
+});
+
+router.get("/logout", (req, res, next) => {
+  req.session.destroy(err => {
+    res.redirect("/login");
+  });
 });
 
 module.exports = router;
