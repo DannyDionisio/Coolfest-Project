@@ -4,6 +4,10 @@ const { Router } = require("express");
 const router = new Router();
 const axios = require('axios');
 const Event = require("../models/event");
+const express = require("express");
+const uploadCloud = require("../config/cloudinary.js");
+
+
 
 router.get("/", (req, res, next) => {
   res.render("index", { title: "Comeal" });
@@ -23,6 +27,49 @@ router.get('/events', (req, res, next) => {
     next(error);
   });
 });
+
+
+
+
+//--- create events ---
+router.get("/events/create-event", (req, res, next) => {
+  console.log("here");
+  axios
+    .get(
+      "https://api.spoonacular.com/recipes/search?apiKey=4bbde67ea47345b69767d4d3093f0fe5"
+    )
+    .then(result => {
+      res.render("create-event", { recipes: result.data.results });
+    });
+});
+
+// router.post("/create-event", uploadCloud.single('photo'), (req, res, next) => {
+//   const { title, date, capacity, place, contacts, recipe, comment } = req.body;
+//   const imgPath = req.file.url;
+//   const imgName = req.file.originalname;
+
+//   Event.create({
+//     title,
+//     date,
+//     capacity,
+//     place,
+//     contacts,
+//     recipe,
+//     comment,
+//     imgName, 
+//     imgPath
+//   })
+//     .then(event => {
+//       res.redirect("/events");
+//     })
+//     .catch(next);
+// });
+
+
+
+
+
+
 
 
 //show event when on click 
