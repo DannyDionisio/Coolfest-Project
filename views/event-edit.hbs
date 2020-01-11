@@ -2,29 +2,29 @@
   <img src="/images/logo.png" width=11% alt="logo">
 </div>
 <h1>{{title}}</h1>
-<form action="/events/{{ events._id }}" method="POST">
+<form action="/events/{{ event._id }}/edit" method="POST"> 
    <div>
     <label for="date"> Date: </label>
-    <input type="date" name="date" id="date" value="{{ events.date }}">
+    <input type="date" name="date" id="date" value="{{ date }}">
   </div>
   <div>
      <label for="">Capacity:</label>
-      <input type="number" name="capacity" id="capacity">{{ events.capacity}}</textarea>
+      <input type="number" name="capacity" id="capacity">{{ capacity}}</textarea>
   </div>
 
   <div>
     <label for="place"> Place: </label>
-    <input type="text" name="place" id="place" value="{{ events.place }}">
+    <input type="text" name="place" id="place" value="{{ place }}">
   </div>
 
   <div>
     <label for="contacts"> Contacts: </label>
-    <input type="number" name="contacts" id="contacts" value="{{ events.contacts }}">
+    <input type="number" name="contacts" id="contacts" value="{{ contacts }}">
   </div>
 
   <div>
     <label for="comment"> Description: </label>
-    <input type="text" name="comment" id="comment" value="{{ events.comment }}">
+    <input type="text" name="comment" id="comment" value="{{ comment }}">
   </div>
   <button type="submit">Update Your Event!</button>
 
