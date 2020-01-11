@@ -11,7 +11,7 @@ a {
   font-size: x-large; }
 
 .nav h2, h1 {
-  padding: 15px; }
+  padding: 0 15px 0 15px; }
 
 /*INDEX*/
 .bg-index {
@@ -187,7 +187,7 @@ p {
 
 /*PROFILE*/
 .user-pic img {
-  width: 30%; }
+  width: 35%; }
 
 .profile-ctn {
   width: 60%;
