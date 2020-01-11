@@ -25,6 +25,19 @@ router.get('/events', (req, res, next) => {
 });
 
 
+router.get("/events/create-event", (req, res, next) => {
+  axios
+    .get(
+      "https://api.spoonacular.com/recipes/search?apiKey=4bbde67ea47345b69767d4d3093f0fe5"
+    )
+    .then(result => {
+      res.render("create-event", { recipes: result.data.results });
+    });
+});
+
+
+
+
 //show event when on click 
 
 router.get('/events/:id', (req, res, next) => {
