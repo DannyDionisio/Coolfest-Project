@@ -1,37 +1,38 @@
 <div class = "logo">
   <img src="/images/logo.png" width=11% alt="logo">
 </div>
-<h1>{{title}}</h1>
+<h1>{{event.title}}</h1>
+<img src="{{event.imgPath}}" class="card-img-top" alt="Event Image">
 <form action="/events/{{ event._id }}/edit" method="POST"> 
    <div>
     <label for="date"> Date: </label>
-    <input type="date" name="date" id="date" value="{{ date }}">
+    <input type="date" name="date" id="date" value="{{ event.date }}">
   </div>
   <div>
      <label for="">Capacity:</label>
-      <input type="number" name="capacity" id="capacity">{{ capacity}}</textarea>
+      <input type="number" name="capacity" id="capacity"  value="{{ event.capacity }}"></textarea>
   </div>
 
   <div>
     <label for="place"> Place: </label>
-    <input type="text" name="place" id="place" value="{{ place }}">
+    <input type="text" name="place" id="place" value="{{ event.place }}">
   </div>
-
+{{!-- 
 <select name="recipe" id="recipeSelect" class="custom-select"><br/>
       <option selected>Choose a recipe to cook</option>
       {{#each recipes}}
         <option value="{{this.title}}">{{this.title}}</option>
       {{/each}}
-    </select>
+    </select> --}}
 
   <div>
     <label for="contacts"> Contacts: </label>
-    <input type="number" name="contacts" id="contacts" value="{{ contacts }}">
+    <input type="number" name="contacts" id="contacts" value="{{ event.contacts }}">
   </div>
 
   <div>
     <label for="comment"> Description: </label>
-    <input type="text" name="comment" id="comment" value="{{ comment }}">
+    <input type="text" name="comment" id="comment" value="{{ event.comment }}">
   </div>
   <div>
     <label for="">Upload Event Picture</label>

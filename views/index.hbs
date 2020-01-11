@@ -27,19 +27,45 @@
       </div>
       <div>
         <h2>Past Events</h2>
-
-        
-
-
-
-
-
-
+       
       </div>
+    
+
+<div class="ctn-wrap">
+    {{#each events}}
+    <div class="ctn-card">
+      <div class="card" style="width: 18rem;">
+        <img src="{{this.imgPath}}" class="card-img-top" alt="Event Image">
+        <div class="card-body">
+          <h5> {{ this.title }} </h5>
+          <p class="card-text">Description: {{ this.comment }}</p>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Recipe: {{ this.recipe }}</li>
+          <li class="list-group-item">When: {{ this.date }}</li>
+          <li class="list-group-item">Where: {{ this.place }}</li>
+          <li class="list-group-item">CO MEAL attendees: {{ this.capacity }}</li>  
+        </ul>
+        <div class="card-body">
+          <a href="/events/{{ this._id }}" class="card-link">See this event</a>
+        </div>
+      </div>
+      <a href="/events/{{ this._id }}/edit">Edit</a>
+      <form action="/events/{{ this._id }}/delete" method="POST">
+        <button> Delete </button>
+      </form>
+    </div>
+    {{/each}}
+  </div>
+</div>
+
+
+
+
+
     </div>
   </div>
-
-  
 </div>
+
 
 
