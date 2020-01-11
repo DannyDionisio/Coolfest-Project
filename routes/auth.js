@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const User = require("../models/user");
-const bcrypt = require("bcryptjs"); // nunca alterar essa linha 
+const bcrypt = require("bcrypt"); // nunca alterar essa linha
 const multer = require("multer");
 const uploadCloud = require("../config/cloudinary.js");
 // const bcryptSalt = 10;
@@ -88,7 +88,7 @@ router.get("/profile", (req, res, next) => {
 
   User.findById(req.session.currentUser._id)
     .then(o => {
-     // console.log(o);
+      // console.log(o);
       res.render("auth/profile", { user: req.session.currentUser });
     })
     .catch(error => {
@@ -116,25 +116,19 @@ router.get("/profile-edit", (req, res, next) => {
     });
 });
 
-
-
-
-
-
-
 router.post("/profile-edit", (req, res, next) => {
   const updatedUser = {
-       phone: req.body.phone,
+    phone: req.body.phone,
     Quote: req.body.Quote,
     cooking_Skills: req.body.cooking_Skills,
-    food_preferences: req.body.food_preferences,
+    food_preferences: req.body.food_preferences
     // imgPath,
     // imgName
   };
-console.log('curren userrrr', req.session.currentUser, updatedUser)
+  console.log("curren userrrr", req.session.currentUser, updatedUser);
   User.updateOne({ _id: req.session.currentUser._id }, updatedUser)
     .then(() => {
-      console.log('id updating', req.session.currentUser._id)
+      console.log("id updating", req.session.currentUser._id);
       res.redirect("/auth/profile");
     })
     .catch(error => {

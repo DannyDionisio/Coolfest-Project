@@ -106,6 +106,18 @@ a {
   padding-bottom: 25px;
 }
 
+.bg-signup {
+  height: unset;
+}
+
+.bg-signup h3 {
+  text-align: center;
+}
+
+.title-preferences {
+ padding-top: 15px;
+}
+
 .container-log-sign {
   background-color: white;
   width: 30%;
@@ -114,6 +126,16 @@ a {
   flex-direction: column;
   align-self: center;
   border-radius: 5px;
+}
+
+.signup-container {
+  width: 50%;
+}
+
+.form-options {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .event {
@@ -138,6 +160,18 @@ a {
   background-color: #009a3d;
   font-weight: bold;
   margin: 0 18px;
+}
+
+.btn-signup {
+  margin: unset;
+}
+
+.style-container {
+  padding: 45px;
+}
+
+.upload-pic {
+  padding: 5px 0 20px 0;
 }
 
 input:required + .help-text::before {
@@ -170,8 +204,6 @@ p {
 .event-pic {
   width: 100px;
   height: auto;
- 
-
 }
 
 /*EVENTS*/
@@ -195,4 +227,31 @@ p {
 
 .bg-event h1 {
   padding: 50px 80px 0;
+}
+
+/*PROFILE*/
+
+.user-pic img {
+  width: 30%;
+}
+
+.profile-ctn {
+  width: 60%;
+  padding: 55px;
+}
+
+.flex-profile {
+  display: flex;
+}
+
+.style-form p {
+  padding: 10px 0;
+}
+
+.pref-container h3 {
+  padding-top: 30px;
+}
+
+.quote-ctn {
+  margin-bottom: 20px;
 }
