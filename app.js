@@ -47,11 +47,13 @@ app.use(
 );
 app.use(express.static(join(__dirname, "public")));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: false })); 
 app.use(cookieParser());
 app.use(session({
   secret: "basic-auth-secret", ///can be any string 
   cookie: { maxAge: 60000 }, //time cookie will stay in your machine
+  resave: true,
+  saveUninitialized: true,
   store: new MongoStore({
     mongooseConnection: mongoose.connection,
     ttl: 24 * 60 * 60 // 1 day ttl it is time to logout

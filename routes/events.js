@@ -6,6 +6,8 @@ const Event = require("../models/event");
 const axios = require("axios");
 const uploadCloud = require("../config/cloudinary.js");
 
+
+
 //------CRIAR VIEWWW
 
 //--- create events ---
@@ -21,7 +23,6 @@ router.get("/create-event", (req, res, next) => {
 
 router.post("/create-event", uploadCloud.single('photo'), (req, res, next) => {
   const { title, date, capacity, place, contacts, recipe, comment } = req.body;
-  console.log("title", title);
   const imgPath = req.file.url;
   const imgName = req.file.originalname;
 
@@ -44,12 +45,40 @@ router.post("/create-event", uploadCloud.single('photo'), (req, res, next) => {
 
 
 // -- edit events --
-//GET EDIT EVENTS VIEW
-//POST(?) EDIT EVENTS VIEW FORM
+//Exemplo do movie update
+// router.post('/movies/:id', (req, res, next) => {
+//   const updatedMovie = {
+//     title: req.body.title,
+//     plot: req.body.plots,
+//     genre: req.body.genre,
+//   };
 
-// -- delete event
+//   Movie.update({_id: req.params.id}, updatedMovie)
+//     .then(() => {
+//       res.redirect('/movies');
+//     })
+//     .catch((error) => {
+//       next(error);
+//     });
+// });
 
-router.post("/events/edit", (req, res, next) => {
+
+// router.get('/events/:id/edit', (req, res, next) => {
+//   Event.findById(req.params.id)
+//   console.log("this is the req", req.params.id)
+//   .then(event => {
+//     console.log("this is the event", event)
+//     res.render('event-edit', {event});
+//   })
+//   .catch(error => {
+//     console.log(">>>>>>>>>>>>>", error)
+//     next(error);
+//   });
+// });
+
+
+
+router.post("/events/event-edit", (req, res, next) => {
   const { title, date, capacity, place, contacts, recipe, comment } = req.body;
   Event.update(
     { _id: req.query.events_id },

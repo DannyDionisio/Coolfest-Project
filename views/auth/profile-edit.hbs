@@ -1,0 +1,71 @@
+<header>
+  <nav class="navbar navbar-light bg-light">
+    <a class="navbar-brand" href="../">
+      <img src="/images/logo.png" width="100" height="120" alt="logo">
+    </a>
+    <div class="nav">
+      <h2> UPDATE YOUR PROFILE!</h2>
+      <h1> {{user.name}}</h1>
+    </div>
+  </nav>
+</header>
+<div class="bg-log-signup">
+  <div class="container-log-sign event">
+<section>
+   <div class="aln-form">
+   <div class="style-form">
+              <h3>UPDATE/EDIT YOUR PROFILE </h3>
+
+ 
+
+<div class="user-pic">
+    <div class="user-item">
+      <img src="{{user.imgPath}}" alt="" >
+    </div>
+</div>
+
+<form action="/auth/profile-edit" method="POST" id="form" class="box-login" class="box-login">
+    <div class="aln-form">
+        <div class="style-form">
+    
+  <p> Loose your phone on a drunk night. Dont Worry! just type the new one. {{user.phone}}  </p>
+  <label for="">Phone:</label>
+  <input type="number" name="phone">
+
+<br/>
+<br/>
+
+  <p> My Food preferences: {{user.food_preferences}}  </p>
+
+  <label for="">More Food Preferences? Just be bold and click on all of them!!!</label>
+  <input type="checkbox" name="food_preferences" value="burguer">Burguer<br>
+  <input type="checkbox" name="food_preferences" value="italian">Italian<br>  
+  <input type="checkbox" name="food_preferences" value="vegetarian">Vegetarian<br>
+  <input type="checkbox" name="food_preferences" value="eggs">Eggs<br>
+  <input type="checkbox" name="food_preferences" value="gluten">Gluten<br>
+
+<br/>
+<br/>
+  <p> My Cooking Skills: {{user.cooking_Skills}}  </p>
+  <label for="">Come on Gordon Ramsey!!! Show us your skills</label>
+  <input type="checkbox" name="cooking_Skills" value="Professional Dish Washer"> Professional Dish Washer <br>
+  <input type="checkbox" name="cooking_Skills" value="Jedi Chef"> Jedi Chef <br>
+  <input type="checkbox" name="cooking_Skills" value="Wine Guy"> Wine Guy <br>
+  <input type="checkbox" name="cooking_Skills" value="I know how to fry an egg"> I know how to fry an egg <br>
+  <input type="checkbox" name="cooking_Skills" value="Padawan Chef">Padawan Chef<br>
+
+<br/>
+<br/>
+
+  <p> My Quote: {{user.Quote}}  </p>
+  <br/>
+  <label for="">You can be more creative!!! </label>
+  <input type="text" name="Quote">
+  <button type="submit">SUBMIT</button>
+</form>
+
+<a href="/events/create-event">Wanna become host??? </a>
+</div>
+</div>
+</div>
+</div>
