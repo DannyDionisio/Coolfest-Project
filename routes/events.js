@@ -11,7 +11,7 @@ const uploadCloud = require("../config/cloudinary.js");
 //------CRIAR VIEWWW
 
 //--- create events ---
-router.get("/create-event", (req, res, next) => {
+router.get("/events/create-event", (req, res, next) => {
   axios
     .get(
       "https://api.spoonacular.com/recipes/search?apiKey=4bbde67ea47345b69767d4d3093f0fe5"
@@ -44,25 +44,6 @@ router.post("/create-event", uploadCloud.single('photo'), (req, res, next) => {
 });
 
 
-// -- edit events --
-//Exemplo do movie update
-// router.post('/movies/:id', (req, res, next) => {
-//   const updatedMovie = {
-//     title: req.body.title,
-//     plot: req.body.plots,
-//     genre: req.body.genre,
-//   };
-
-//   Movie.update({_id: req.params.id}, updatedMovie)
-//     .then(() => {
-//       res.redirect('/movies');
-//     })
-//     .catch((error) => {
-//       next(error);
-//     });
-// });
-
-
 // router.get('/events/:id/edit', (req, res, next) => {
 //   Event.findById(req.params.id)
 //   console.log("this is the req", req.params.id)
@@ -78,18 +59,18 @@ router.post("/create-event", uploadCloud.single('photo'), (req, res, next) => {
 
 
 
-router.post("/events/event-edit", (req, res, next) => {
-  const { title, date, capacity, place, contacts, recipe, comment } = req.body;
-  Event.update(
-    { _id: req.query.events_id },
-    { $set: { title, date, capacity, place, contacts, recipe, comment } }
-  )
-    .then(event => {
-      res.redirect("/events");
-    })
-    .catch(error => {
-      console.log(error);
-    });
-});
+// router.post("/events/event-edit", (req, res, next) => {
+//   const { title, date, capacity, place, contacts, recipe, comment } = req.body;
+//   Event.update(
+//     { _id: req.query.events_id },
+//     { $set: { title, date, capacity, place, contacts, recipe, comment } }
+//   )
+//     .then(event => {
+//       res.redirect("/events");
+//     })
+//     .catch(error => {
+//       console.log(error);
+//     });
+// });
 
 module.exports = router;
