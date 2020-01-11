@@ -24,6 +24,21 @@ router.get('/events', (req, res, next) => {
   });
 });
 
+//show event when on click 
+
+router.get('/events/:id', (req, res, next) => {
+  Event.findById(req.params.id)
+    .then(event => {
+      res.render('event-show', { event });
+    })
+    .catch(error => {
+      next(error);
+  });
+});
+
+
+//update
+
 router.get('/events/:id/edit', (req, res, next) => {
   Event.findOne({_id: req.params.id})
   // console.log("this is the req", Event.findById(req.params.id))

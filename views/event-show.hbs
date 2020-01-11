@@ -1,0 +1,31 @@
+<header>
+  <nav class="navbar navbar-light bg-light">
+    <a class="navbar-brand" href="../">
+      <img src="/images/logo.png" width="100" height="120" alt="logo">
+    </a>
+  </nav>
+</header>
+<section>
+    {{!-- {{#each events}} --}}
+<div>
+
+<p>teste</p>    
+<h5> {{ event.title }} </h5>
+    <img src="{{event.imgPath}}"/>
+          <p class="card-text">Description: {{ this.comment }}</p>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Recipe: {{ recipe }}</li>
+          <li class="list-group-item">When: {{ this.date }}</li>
+          <li class="list-group-item">Where: {{ this.place }}</li>
+          <li class="list-group-item">CO MEAL attendees: {{ this.capacity }}</li>  
+        </ul>
+{{ contacts }}
+
+
+<a href="/events">
+  Back to Events Inventory
+</a> 
+ {{!-- {{/each}} --}}
+ 
+</section>
