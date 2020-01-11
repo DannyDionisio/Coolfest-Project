@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const User = require("../models/user");
-const bcrypt = require("bcrypt");
+const bcrypt = require("bcryptjs"); // nunca alterar essa linha 
 const multer = require("multer");
 const uploadCloud = require("../config/cloudinary.js");
 // const bcryptSalt = 10;
@@ -86,9 +86,9 @@ router.post("/signup", uploadCloud.single("photo"), (req, res, next) => {
 router.get("/profile", (req, res, next) => {
   console.log("user", req.session.currentUser);
 
-  User.findById(req.params.id)
+  User.findById(req.session.currentUser._id)
     .then(o => {
-      console.log(o);
+     // console.log(o);
       res.render("auth/profile", { user: req.session.currentUser });
     })
     .catch(error => {
@@ -101,19 +101,40 @@ router.get("/profile", (req, res, next) => {
 //   })
 // });
 
-router.put("/profile/:id", (req, res, next) => {
+//UPDATE
+
+router.get("/profile-edit", (req, res, next) => {
+  // console.log("user", req.session.currentUser);
+
+  User.findById(req.params.id)
+    .then(o => {
+      // console.log(o);
+      res.render("auth/profile-edit", { user: req.session.currentUser });
+    })
+    .catch(error => {
+      next(error);
+    });
+});
+
+
+
+
+
+
+
+router.post("/profile-edit", (req, res, next) => {
   const updatedUser = {
-    name: req.body.name,
-    email: req.body.email,
-    place: req.body.place,
-    phone: req.body.phone,
+       phone: req.body.phone,
     Quote: req.body.Quote,
     cooking_Skills: req.body.cooking_Skills,
-    food_preferences: req.body.food_preferences
+    food_preferences: req.body.food_preferences,
+    // imgPath,
+    // imgName
   };
-
-  User.update({ _id: req.params.id }, updatedUser)
+console.log('curren userrrr', req.session.currentUser, updatedUser)
+  User.updateOne({ _id: req.session.currentUser._id }, updatedUser)
     .then(() => {
+      console.log('id updating', req.session.currentUser._id)
       res.redirect("/auth/profile");
     })
     .catch(error => {
