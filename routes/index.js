@@ -4,6 +4,10 @@ const { Router } = require("express");
 const router = new Router();
 const axios = require('axios');
 const Event = require("../models/event");
+const express = require("express");
+const uploadCloud = require("../config/cloudinary.js");
+
+
 
 router.get("/", (req, res, next) => {
   res.render("index", { title: "Comeal" });
