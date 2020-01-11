@@ -17,6 +17,13 @@
     <input type="text" name="place" id="place" value="{{ place }}">
   </div>
 
+<select name="recipe" id="recipeSelect" class="custom-select"><br/>
+      <option selected>Choose a recipe to cook</option>
+      {{#each recipes}}
+        <option value="{{this.title}}">{{this.title}}</option>
+      {{/each}}
+    </select>
+
   <div>
     <label for="contacts"> Contacts: </label>
     <input type="number" name="contacts" id="contacts" value="{{ contacts }}">
@@ -26,6 +33,11 @@
     <label for="comment"> Description: </label>
     <input type="text" name="comment" id="comment" value="{{ comment }}">
   </div>
+  <div>
+    <label for="">Upload Event Picture</label>
+    <input type="file" name="photo">
+</div>
+
   <button type="submit">Update Your Event!</button>
 
 </form>

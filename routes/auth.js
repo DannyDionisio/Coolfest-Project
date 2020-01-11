@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const User = require("../models/user");
-const bcrypt = require("bcrypt"); // nunca alterar essa linha
+const bcrypt = require("bcryptjs"); // nunca alterar essa linha
 const multer = require("multer");
 const uploadCloud = require("../config/cloudinary.js");
 // const bcryptSalt = 10;

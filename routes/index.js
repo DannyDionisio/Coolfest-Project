@@ -24,6 +24,7 @@ router.get('/events', (req, res, next) => {
   });
 });
 
+
 //show event when on click 
 
 router.get('/events/:id', (req, res, next) => {
@@ -37,10 +38,14 @@ router.get('/events/:id', (req, res, next) => {
 });
 
 
-//update
+//update event 
 
 router.get('/events/:id/edit', (req, res, next) => {
   Event.findOne({_id: req.params.id})
+  // axios
+  //   .get(
+  //     "https://api.spoonacular.com/recipes/search?apiKey=4bbde67ea47345b69767d4d3093f0fe5"
+  //   )
   // console.log("this is the req", Event.findById(req.params.id))
 
   .then(event => {
@@ -61,6 +66,7 @@ router.post('/events/:id/edit', (req, res, next) => {
         contacts: req.body.contacts, 
         recipe: req.body.recipe, 
         comment: req.body.comment,
+        
   };
 
   Event.update({_id: req.params.id}, updatedEvent)
@@ -71,24 +77,6 @@ router.post('/events/:id/edit', (req, res, next) => {
       next(error);
     });
 });
-
-
-// router.post("/events/:id/edit", (req, res, next) => {
-//   const { title, date, capacity, place, contacts, recipe, comment } = req.body;
-//   Event.update(
-//     { _id: req.query.events_id },
-//     { $set: { title, date, capacity, place, contacts, recipe, comment } }
-//   )
-//     .then(event => {
-//       res.redirect("/events");
-//     })
-//     .catch(error => {
-//       console.log(error);
-//     });
-// });
-
-
-
 
 
 router.post('/events/:id/delete', (req, res, next) => {
@@ -103,9 +91,6 @@ router.post('/events/:id/delete', (req, res, next) => {
       });
   });
 });
-
-
-
 
 
 module.exports = router;
