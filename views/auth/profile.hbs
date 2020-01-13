@@ -19,28 +19,34 @@
         <div class="aln-form">
           <div class="style-form style-container">
             <h3> Hi my name is: {{user.name}} </h3>
-            <label for="name">Do you want change your name?</label>
+            {{!-- <label for="name">Do you want change your name?</label>
             <input type="text" name="name">
             <label for="phone">Edit your Phone:</label>
-            <input type="number" name="phone">
-            <p> Phone number: {{user.phone}} </p>
+            <input type="number" name="phone"> --}}
+            <h3> Phone number: {{user.phone}} </h3>
+            <h3> My Food preferences: {{user.food_preferences}}  </h3>
+            <h3> My Cooking Skills: {{user.cooking_Skills}}  </h3>
+
+
           </div>
         </div>
     </div>
     <div class="pref-container">
-      <h3> My Food preferences: {{user.food_preferences}}  </h3>
-      <div class="skills-container">
+      <a href="/auth/profile-edit" class="button" > Update your profile </a> 
+      </br>
+      <a href="/events/create-event" class="button"> Host your CoMeal!! </a>
+      {{!-- <div class="skills-container">
         <label for="food_preferences" class="title-preferences">Food Preferences:</label>
         <div class="form-options">
           <input type="checkbox" name="food_preferences" value="burguer">Burguer<br>
           <input type="checkbox" name="food_preferences" value="italian">Italian<br>  
           <input type="checkbox" name="food_preferences" value="vegetarian">Vegetarian<br>
           <input type="checkbox" name="food_preferences" value="eggs">Eggs<br>
-          <input type="checkbox" name="food_preferences" value="gluten">Gluten<br>
+          <input type="checkbox" name="food_preferences" value="gluten">Gluten<br> --}}
         </div>
       </div>
-      <h3> My Cooking Skills: {{user.cooking_Skills}}  </h3>
-      <div class="skills-container">
+      
+      {{!-- <div class="skills-container">
         <label for="cooking_Skills" class="title-preferences">Cooking Skills:</label>
         <div class="form-options">
           <input type="checkbox" name="cooking_Skills" value="Professional Dish Washer"> Professional Dish Washer <br>
@@ -48,12 +54,13 @@
           <input type="checkbox" name="cooking_Skills" value="Wine Guy"> Wine Guy <br>
           <input type="checkbox" name="cooking_Skills" value="I know how to fry an egg"> I know how to fry an egg <br>
           <input type="checkbox" name="cooking_Skills" value="Padawan Chef">Padawan Chef<br>
-        </div>
+        </div> --}}
       </div>
     </div>
-      <h3> Change my Quote: {{user.Quote}}  </h3>
+      {{!-- <h3> Change my Quote: {{user.Quote}}  </h3>
       <label for="" class="title-preferences">Resume yourself in one quote:</label>
       <input type="text" name="Quote" id="required-name" class="quote-ctn">
       <button type="submit" class="style-btn btn-signup">SUBMIT</button>
-      </form>
+      </form> --}}
+     
 </div>
