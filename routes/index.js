@@ -10,7 +10,10 @@ const uploadCloud = require("../config/cloudinary.js");
 
 
 router.get("/", (req, res, next) => {
-  res.render("index", { title: "Comeal" });
+  Event.find()
+  .then(allEventFromDB =>
+
+  res.render("index", { title: "Comeal" , events: allEventFromDB }))
 });
 
 //--- the list of the events ---
