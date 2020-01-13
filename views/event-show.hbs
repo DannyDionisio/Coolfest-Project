@@ -6,19 +6,16 @@
   </nav>
 </header>
 
-<section>
-<div>
-
-<p>teste</p>    
-<h5> {{ event.title }} </h5>
-    <img src="{{event.imgPath}}"/>
-          <p class="card-text">Description: {{ this.comment }}</p>
+<section>    
+  <img src="{{event.imgPath}}" class="img-style"/>
+      <h1> {{ event.title }} </h1>
+          <p class="card-text">Description: {{ event.comment }}</p>
         </div>
         <ul class="list-group list-group-flush">
-          <li class="list-group-item">Recipe: {{ recipe }}</li>
-          <li class="list-group-item">When: {{ this.date }}</li>
-          <li class="list-group-item">Where: {{ this.place }}</li>
-          <li class="list-group-item">CO MEAL attendees: {{ this.capacity }}</li>  
+          <li class="list-group-item">Recipe: {{ event.recipe }}</li>
+          <li class="list-group-item">When: {{ event.date }}</li>
+          <li class="list-group-item">Where: {{ event.place }}</li>
+          <li class="list-group-item">CO MEAL attendees: {{ event.capacity }}</li>  
         </ul>
 {{ contacts }}
 
