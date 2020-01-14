@@ -25,8 +25,7 @@ a {
   text-align: center; }
 
 .bg-form {
-  background-color: #e6e6e6;
-  opacity: 0.6;
+  background-color: rgba(230, 230, 230, 0.6);
   padding: 50px; }
 
 .search-form {
@@ -175,7 +174,7 @@ p {
 .ctn-card {
   display: flex;
   flex-direction: column;
-  padding: 0 85px 65px; }
+  padding: 0 29px 65px; }
 
 .bg-event {
   background-image: url(../images/kitchen.jpg);
@@ -187,7 +186,10 @@ p {
 
 /*PROFILE*/
 .user-pic img {
-  width: 35%; }
+  width: 30%;
+  height: 30%;
+  border-radius: 50%;
+  display: flex; }
 
 .profile-ctn {
   width: 60%;
@@ -204,6 +206,24 @@ p {
 
 .quote-ctn {
   margin-bottom: 20px; }
+
+.box-login i {
+  font-size: 20px; }
+
+.pref-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center; }
+
+.button {
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 30px 40px 0 40px; }
+
+.aj-ctn {
+  padding: 60px; }
 
 /*EVENT-SHOW*/
 .img-style {
