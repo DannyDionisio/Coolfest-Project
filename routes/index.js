@@ -16,6 +16,15 @@ router.get("/", (req, res, next) => {
   res.render("index", { title: "Comeal" , events: allEventFromDB }))
 });
 
+//about route
+
+router.get("/about", (req, res, next) => {
+  res.render("about");
+});
+
+
+
+
 //--- the list of the events ---
 router.get('/events', (req, res, next) => {
   // console.log("getting events");
@@ -91,6 +100,7 @@ router.post('/events/:id/edit', (req, res, next) => {
 
   Event.update({_id: req.params.id}, updatedEvent)
     .then(() => {
+      console.log("teste update", req.body.title)
       res.redirect('/events');
     })
     .catch((error) => {
