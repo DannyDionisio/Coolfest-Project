@@ -24,32 +24,29 @@
       <span class="help-text"></span>
       </div>
       <div class="style-form style-container">
-      
-    <label for="">Date:</label><br/>
+          <label for="">Date:</label><br/>
     <input type="date" name="date">
-    
+    <br>
     <label for="">Capacity:</label><br/>
     <input type="number" name="capacity">
-    
+    <br>
     <label for="">Place:</label><br/>
     <input type="text" name="place">
-    
+    <br>
     <label for="">Contact</label><br/>
     <input type="number" name="contacts">
+  <br>
     <label for="">Recipe:</label>
-  
-    <select name="recipe" id="recipeSelect" class="custom-select"><br/>
+      <select name="recipe" id="recipeSelect" class="custom-select"><br/>
       <option selected>Choose a recipe to cook</option>
-      {{#each recipes}}
+      <b>{{#each recipes}}
         <option value="{{this.title}}">{{this.title}}</option>
-      {{/each}}
+      {{/each}}</b>
     </select>
-    
+  <br>  
     <label for="">Comment:</label><br/>
     <input type="datetime" name="comment">
-  
-  
-  
+  <br>  
     <label for="">Upload Event Picture</label>
     <input type="file" name="photo">
     <button type="submit">Create Your Event!</button>
