@@ -1,5 +1,5 @@
 <header>
-  <nav class="navbar navbar-light bg-light">
+  <nav class="navbar navbar-light">
     <a class="navbar-brand" href="../">
       <img src="/images/logo.png" width="100" height="120" alt="logo">
     </a>
@@ -15,49 +15,40 @@
   <h3>and prepare the best recipes together!</h3>
   <div class="container-log-sign signup-container">
     <form action="/auth/signup" method="POST" enctype="multipart/form-data" id="form">
-      <div class="aln-form">
-        <div class="style-form style-container">
-          <label for="">Username:</label>
-          <input type="text" name="name" id="required-name">
-
-          <label for="" class="title-preferences">Password:</label>
-          <input type="password" name="password" id="required-name">
-
-          <label for="" class="title-preferences">Email:</label>
-          <input type="email" name="email" id="required-name">
-
-          <label for="" class="title-preferences">Phone:</label>
-          <input type="number" name="phone" id="required-name">
-          </br>
-
-          <div class="skills-container">
-            <label for="food_preferences" class="title-preferences">Food Preferences:</label>
-            <div class="form-options">
-              <input type="checkbox" name="food_preferences" value="burguer">Burguer
-              <input type="checkbox" name="food_preferences" value="italian">Italian  
-              <input type="checkbox" name="food_preferences" value="vegetarian">Vegetarian
-              <input type="checkbox" name="food_preferences" value="eggs">Eggs
-              <input type="checkbox" name="food_preferences" value="gluten">Gluten
-            </div>
+      <div class="style-form style-container">
+        <label for="">Username:</label>
+        <input type="text" name="name" id="required-name">
+        <label for="" class="title-preferences">Password:</label>
+        <input type="password" name="password" id="required-name">
+        <label for="" class="title-preferences">Email:</label>
+        <input type="email" name="email" id="required-name">
+        <label for="" class="title-preferences">Phone:</label>
+        <input type="number" name="phone" id="required-name">
+        <div class="skills-container">
+          <label for="food_preferences" class="title-preferences">Food Preferences:</label>
+          <div class="form-options">
+            <input type="checkbox" name="food_preferences" value="burguer">Burguer
+            <input type="checkbox" name="food_preferences" value="italian">Italian  
+            <input type="checkbox" name="food_preferences" value="vegetarian">Vegetarian
+            <input type="checkbox" name="food_preferences" value="eggs">Eggs
+            <input type="checkbox" name="food_preferences" value="gluten">Gluten
           </div>
-          </br>
-          <div class="skills-container">
-            <label for="cooking_Skills" class="title-preferences"><p>Cooking Skills:</p></label>
-            <div class="form-options">
-              <input type="checkbox" name="cooking_Skills" value="Professional Dish Washer"> Professional Dish Washer 
-              <input type="checkbox" name="cooking_Skills" value="Jedi Chef"> Jedi Chef 
-              <input type="checkbox" name="cooking_Skills" value="Wine Guy"> Wine Guy 
-              <input type="checkbox" name="cooking_Skills" value="I know how to fry an egg"> I know how to fry an egg 
-              <input type="checkbox" name="cooking_Skills" value="Padawan Chef">Padawan Chef
-            </div>
-          </div>
-          <label for="" class="title-preferences">Resume yourself in one quote:</label>
-          <input type="text" name="Quote" id="required-name">
-
-          <label for="" class="title-preferences">Your picture:</label>
-          <input type="file" name="photo" class="upload-pic">
-          <button type="submit" class="style-btn btn-signup">Sign Up</button>
         </div>
+        <div class="skills-container">
+          <label for="cooking_Skills" class="title-preferences"><p>Cooking Skills:</p></label>
+          <div class="form-options">
+            <input type="checkbox" name="cooking_Skills" value="Professional Dish Washer"> Professional Dish Washer 
+            <input type="checkbox" name="cooking_Skills" value="Jedi Chef"> Jedi Chef 
+            <input type="checkbox" name="cooking_Skills" value="Wine Guy"> Wine Guy 
+            <input type="checkbox" name="cooking_Skills" value="I know how to fry an egg"> I know how to fry an egg 
+            <input type="checkbox" name="cooking_Skills" value="Padawan Chef">Padawan Chef
+          </div>
+        </div>
+        <label for="" class="title-preferences">Resume yourself in one quote:</label>
+        <input type="text" name="Quote" id="required-name">
+        <label for="" class="title-preferences">Your picture:</label>
+        <input type="file" name="photo" class="upload-pic">
+        <button type="submit" class="style-btn btn-signup">Sign Up</button>
       </div>
     </form>
     <div class="link-signup"></div>

@@ -5,7 +5,7 @@ body {
   margin: 0git ;
   padding: 0;
   font-family: $font-sans;
-  
+  background-color: #fff;
 }
 
 a {
@@ -21,8 +21,16 @@ a {
   padding: 0 15px 0 15px;
 }
 
+.navbar {
+  box-shadow: 0 2px 3px 0 rgba(51,51,51,0.2);
+}
 
 /*INDEX*/
+
+.index-title a {
+  text-decoration: none;
+}
+
 .bg-index {
   background-image: url(../images/cover_event.jpg);
   background-repeat: no-repeat;
@@ -35,7 +43,7 @@ a {
 }
 
 .bg-form {
-  background-color:rgb(230, 230, 230);opacity:0.6;
+  background-color:rgba(230, 230, 230, 0.6);
   padding: 50px;
 }
 
@@ -62,6 +70,12 @@ a {
 
 .btn {
   padding: 0.700rem 0.75rem;
+}
+
+.btn-outline-success {
+  color: #fff;
+  background-color: #28a745;
+  font-weight: bold;
 }
 
 /*CREATE EVENT*/
@@ -216,7 +230,7 @@ p {
 .ctn-card {
   display: flex;
   flex-direction: column;
-  padding: 0 85px 65px;
+  padding: 0 29px 65px;
 }
 
 .bg-event {
@@ -229,10 +243,18 @@ p {
   padding: 50px 80px 0;
 }
 
+.card-img-top {
+  max-height: 250px;
+  width: unset;
+}
+
 /*PROFILE*/
 
 .user-pic img {
-  width: 35%;
+  width: 30%;
+  height: 30%;
+  border-radius: 50%;
+  display: flex;
 }
 
 .profile-ctn {
@@ -254,4 +276,37 @@ p {
 
 .quote-ctn {
   margin-bottom: 20px;
+}
+
+.box-login i {
+  font-size: 20px;
+}
+
+.pref-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.button {
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 30px 40px 0 40px;
+}
+
+.aj-ctn {
+  padding: 60px;
+}
+
+/*EVENT-SHOW*/
+
+.img-style {
+  width: 25%;
+  margin: 50px 40%;
+}
+
+.event-ctn-det {
+  background-color: #fff;
 }

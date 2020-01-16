@@ -1,17 +1,14 @@
 <header>
-  <nav class="navbar navbar-light bg-light">
+  <nav class="navbar navbar-light">
     <a class="navbar-brand" href="../">
       <img src="/images/logo.png" width="100" height="120" alt="logo">
     </a>
   </nav>
 </header>
-
-<section>
-<div>
-
-<p>teste</p>    
-<h5> {{ event.title }} </h5>
-    <img src="{{event.imgPath}}"/>
+<section class="event-ctn-det">
+  <div class=""></div>
+  <img src="{{event.imgPath}}" class="img-style"/>
+      <h1> {{ event.title }} </h1>
           <p class="card-text">Description: {{ event.comment }}</p>
         </div>
         <ul class="list-group list-group-flush">
