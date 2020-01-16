@@ -242,11 +242,10 @@ p {
   padding: 60px; }
 
 /*EVENT-SHOW*/
-.img-style {
-  width: 25%; }
-
 .card-event-det {
-  display: flex; }
+  display: flex;
+  margin: 10px 25%;
+  background-color: white; }
 
 .event-ctn-det {
   background-image: linear-gradient(white, #f2f2f2); }
