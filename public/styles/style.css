@@ -243,10 +243,15 @@ p {
 
 /*EVENT-SHOW*/
 .img-style {
-  width: 25%;
-  margin: 50px 40%; }
+  width: 25%; }
+
+.card-event-det {
+  display: flex; }
 
 .event-ctn-det {
-  background-color: #fff; }
+  background-image: linear-gradient(white, #f2f2f2); }
+
+.bkg-card {
+  box-shadow: 0 2px 3px 0 rgba(51, 51, 51, 0.2); }
 
 /*# sourceMappingURL=style.css.map */

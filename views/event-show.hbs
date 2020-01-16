@@ -6,18 +6,25 @@
   </nav>
 </header>
 <section class="event-ctn-det">
-  <div class=""></div>
-  <img src="{{event.imgPath}}" class="img-style"/>
-      <h1> {{ event.title }} </h1>
-          <p class="card-text">Description: {{ event.comment }}</p>
-        </div>
+  <div class="bkg-card">
+    <div class="card-event-det">
+      <div class="ctn-details">
+        <h1> {{ event.title }} </h1>
         <ul class="list-group list-group-flush">
           <li class="list-group-item">Recipe: {{ event.recipe }}</li>
           <li class="list-group-item">When: {{ event.date }}</li>
           <li class="list-group-item">Where: {{ event.place }}</li>
           <li class="list-group-item">CO MEAL attendees: {{ event.capacity }}</li>  
         </ul>
-{{ contacts }}
+      </div>
+      <div class="img-style">
+        <img src="{{event.imgPath}}"/>
+      </div>
+    </div>
+      
+  </div>
+  <p class="card-text">Description: {{ event.comment }}</p>
+  
 
 
 <a href="/events">
