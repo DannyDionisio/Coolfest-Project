@@ -56,7 +56,7 @@ app.use(session({
   saveUninitialized: true,
   store: new MongoStore({
     mongooseConnection: mongoose.connection,
-    ttl: 24 * 60 * 60 // 1 day ttl it is time to logout
+    ttl: 240 * 60 * 60 // 1 day ttl it is time to logout
   })
 }));
 
