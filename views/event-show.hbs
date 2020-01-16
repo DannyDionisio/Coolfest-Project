@@ -9,7 +9,7 @@
   <div class="bkg-card">
     <div class="card-event-det">
       <div class="ctn-details">
-        <h1> {{ event.title }} </h1>
+        <h2> {{ event.title }} </h2>
         <ul class="list-group list-group-flush">
           <li class="list-group-item">Recipe: {{ event.recipe }}</li>
           <li class="list-group-item">When: {{ event.date }}</li>
@@ -17,17 +17,11 @@
           <li class="list-group-item">CO MEAL attendees: {{ event.capacity }}</li>  
         </ul>
       </div>
-      <div class="">
         <img src="{{event.imgPath}}"/>
-      </div>
-    </div>
-      
+    </div> 
   </div>
-  <p class="card-text">Description: {{ event.comment }}</p>
-  
-
-
-<a href="/events">
-  Back to Events Inventory
-</a> 
+  <div class="card-text">
+    <p>Description: {{ event.comment }}</p>
+  </div>
+  <a href="/events" class="style-btn btn-padd">Back to Events Inventory</a> 
 </section>
