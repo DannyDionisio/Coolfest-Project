@@ -44,7 +44,15 @@
     <label for="contacts"> Contacts: </label>
     <input type="number" name="contacts" id="contacts" value="{{ event.contacts }}">
   </div>
-
+{{!-- <div>
+ <label for="" class="title-preferences">Recipe:</label>
+        <select name="recipe" id="required-name" class="custom-select">
+          <option selected>Choose a recipe to cook</option>
+          {{#each recipes}}
+            <option value="{{this.title}}">{{this.title}}</option>
+          {{/each}}
+        </select>
+</div> --}}
   <div>
     <label for="comment"> Description: </label>
     <input type="text" name="comment" id="comment" value="{{ event.comment }}">
