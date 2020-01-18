@@ -8,30 +8,28 @@
 {{!-- <h5>{{title}} a web based collaboration platform to enjoy creating wonderful meals together</h5> --}}
 
 <div class="bg-log-signup">
-        <h1> Event title {{ event.title }}</h1>
+  <h1> Event title {{ event.title }}</h1>
   <div class="container-log-sign profile-ctn style-form">
     <div class="user-pic flex-profile">
-<img src="{{event.imgPath}}" class="card-img-top" alt="Event Image">
-<form action="/events/{{ event._id }}/edit" method="POST"> 
-    <div class="aln-form">
-      <div>
-    <label for="name"> Title: </label>
-    <input type="text" name="title" id="title" value="{{ event.title }}">
-  </div>
-   
-   <div class="style-form">
-    <label for="date"> Date: </label>
-    <input type="date" name="date" id="date" value="{{ event.date }}">
-  </div>
-  <div>
-     <label for="">Capacity:</label>
-      <input type="number" name="capacity" id="capacity"  value="{{ event.capacity }}"></textarea>
-  </div>
-
-  <div>
-    <label for="place"> Place: </label>
-    <input type="text" name="place" id="place" value="{{ event.place }}">
-  </div>
+      <img src="{{event.imgPath}}" class="card-img-top" alt="Event Image"/>
+      <form action="/events/{{ event._id }}/edit" method="POST"> 
+        <div class="aln-form style-form">
+          <div class="style-card">
+            <label for="name"> Title: </label>
+            <input type="text" name="title" id="title" value="{{ event.title }}">
+          </div>
+          <div class="style-card">
+            <label for="date"> Date: </label>
+            <input type="date" name="date" id="date" value="{{ event.date }}">
+          </div>
+          <div  class="style-card">
+             <label for="">Capacity:</label>
+              <input type="number" name="capacity" id="capacity"  value="{{ event.capacity }}"></textarea>
+          </div>
+          <div  class="style-card">
+            <label for="place"> Place: </label>
+            <input type="text" name="place" id="place" value="{{ event.place }}">
+          </div>
 {{!-- 
 <select name="recipe" id="recipeSelect" class="custom-select"><br/>
       <option selected>Choose a recipe to cook</option>
@@ -40,7 +38,7 @@
       {{/each}}
     </select> --}}
 
-  <div>
+  <div class="style-card">
     <label for="contacts"> Contacts: </label>
     <input type="number" name="contacts" id="contacts" value="{{ event.contacts }}">
   </div>
@@ -53,11 +51,11 @@
           {{/each}}
         </select>
 </div> --}}
-  <div>
+  <div class="style-card">
     <label for="comment"> Description: </label>
     <input type="text" name="comment" id="comment" value="{{ event.comment }}">
   </div>
-  <div>
+  <div class="style-card">
     <label for="">Upload Event Picture</label>
     <input type="file" name="photo">
 </div>
