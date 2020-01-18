@@ -10,7 +10,7 @@
 <div class="bg-log-signup">
   <h1> Event title {{ event.title }}</h1>
   <div class="container-log-sign profile-ctn style-form">
-    <div class="user-pic flex-profile">
+    <div class="user-pic flex-profile card-img">
       <img src="{{event.imgPath}}" class="card-img-top" alt="Event Image"/>
       <form action="/events/{{ event._id }}/edit" method="POST"> 
         <div class="aln-form style-form">
@@ -60,7 +60,7 @@
     <input type="file" name="photo">
 </div>
 
-  <button type="submit">Update Your Event!</button>
+  <button type="submit" class="style-btn">Update Your Event!</button>
     </div>
 </form>
 </div>

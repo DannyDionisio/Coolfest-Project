@@ -281,4 +281,9 @@ p {
 .btn-padd {
   padding: 10px 20px; }
 
+/*EDIT EVENT*/
+.card-img img {
+  height: unset;
+  margin-top: 35px; }
+
 /*# sourceMappingURL=style.css.map */
