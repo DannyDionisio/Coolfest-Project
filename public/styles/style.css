@@ -206,6 +206,11 @@ p {
   max-height: 250px;
   width: unset; }
 
+.btn-card a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold; }
+
 /*PROFILE*/
 .user-pic img {
   width: 30%;
@@ -285,5 +290,23 @@ p {
 .card-img img {
   height: unset;
   margin-top: 35px; }
+
+/*ABOUT*/
+.container-abt {
+  font-size: 20px; }
+
+.container-abt h1 {
+  padding: 20px; }
+
+.container-abt p {
+  text-align: left; }
+
+.container-abt ul {
+  text-align: left; }
+
+.bg-abt {
+  background-color: white;
+  border-radius: 5px;
+  padding: 50px; }
 
 /*# sourceMappingURL=style.css.map */
